@@ -1,6 +1,7 @@
 <?php   
-        $link = explode('/', $_SERVER['PHP_SELF'] );
-        $page = $link[2];
+    // for daynamic menu
+    $link = explode('/', $_SERVER['PHP_SELF'] );
+    $page = $link[2];
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="">
@@ -43,10 +44,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a <?php if($page == 'index.php'){echo 'class="active-menu"';}?>  href="index.php">Home</a></li>
         <li><a <?php if($page == 'academics.php'){echo 'class="active-menu"';}?> href="academics.php">ACADEMICS</a></li>
-        <li><a href="admission.php">ADMISSION</a></li>
-        <li><a href="#">PARENTS &amp; STUDENTS </a></li>
-        <li><a href="about.php">ABOUT US </a></li>
-        <li><a href="contact.php">CONTACT US</a></li>
+        <li><a <?php if($page == 'admission.php'){echo 'class="active-menu"';}?> href="admission.php">ADMISSION</a></li>
+        <li><a <?php if($page == 'curriculam.php'){echo 'class="active-menu"';}?> href="curriculam.php">Curriculam</a></li>
+        <li><a <?php if($page == 'about.php'){echo 'class="active-menu"';}?> href="about.php">ABOUT US </a></li>
+        <li><a <?php if($page == 'contact.php'){echo 'class="active-menu"';}?> href="contact.php">CONTACT US</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
