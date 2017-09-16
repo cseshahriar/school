@@ -8,7 +8,7 @@
     <div class="panel panel-primary">
         <div class="panel-heading">
             <div class="col-md-9 heading_title">
-                     All User Information
+                  All User Information
              </div>
              <div class="col-md-3 text-right">
                 <a href="add-user.php" class="btn btn-sm btn btn-primary"><i class="fa fa-plus-circle"></i> Add User</a>
@@ -31,26 +31,31 @@
               <thead class="table_head">
                 <tr>
                     <th>Name</th>
-                    <th>Email</th>
                     <th>Phone</th>
+                    <th>Email</th>
                     <th class="hidden-xs">Username</th>
                     <th class="hidden-xs">User-Role</th>
                     <th>Manage</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td>shahriar</td>
-                    <td>shahriar@gmail.com</td>
-                    <td>01710835653</td>
-                    <td class="hidden-xs">shahriarcse</td>
-                    <td class="hidden-xs">superadmin</td>
-                    <td>
-                        <a href="view-user.php"><i class="fa fa-eye fa-lg"></i></a>
-                        <a href="edit-user.php"><i class="fa fa-pencil-square fa-lg"></i></a>
-                        <a href="delete-user.php" onclick="return confirmation()"><i class="fa fa-trash fa-lg"></i></a>
-                    </td>
-                </tr>
+                <?php
+                  $query = "SELECT * FROM tbl_user NATURAL JOIN tbl_user_role";
+                  $sqlQuery = mysqli_query($dbconnect, $query);
+                  while($row = mysqli_fetch_array($sqlQuery)) : ?>
+                  <tr>
+                      <td><?= $row['name']; ?></td>
+                      <td><?= $row['phone']; ?></td>
+                      <td><?= $row['email']; ?></td>
+                      <td class="hidden-xs"><?= $row['username']; ?></td>
+                      <td class="hidden-xs"><?= $row['role_name']; ?></td>
+                      <td>
+                          <a href="view-user.php?viewId=<?= $row['id']; ?>"><i class="fa fa-eye fa-lg"></i></a>
+                          <a href="edit-user.php?editId=<?= $row['id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="delete-user.php?deleteId=<?= $row['id']; ?>" onclick="return confirmation()"><i class="fa fa-trash fa-lg"></i></a>
+                      </td>
+                  </tr>
+                <?php endwhile; ?>
               </tbody>
           </table>
       </div>
