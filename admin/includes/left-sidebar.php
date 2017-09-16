@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-2 sidebar pd0">
             <div class="side_user">
-                <img class="img-responsive" src="images/avatar.png"/>
+                <img class="img-responsive" src="uploads/avatar.png"/>
                 <h4>Saidul Islam Uzzal</h4>
                 <span><i class="fa fa-circle"></i> Online</span>
             </div>

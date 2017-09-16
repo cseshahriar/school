@@ -3,6 +3,7 @@
     getAdminHeader();
     getAdminSidebar();
     getBreadcrum();
+    $id = $_REQUEST['viewId'];
 ?>
 <div class="col-md-12">
     <div class="panel panel-primary">
@@ -20,36 +21,46 @@
           </div>
           <div class="col-md-9">
             <table class="table table-hover table-striped table-responsive view_table_cus">
+                <?php 
+                      $query = "SELECT * FROM tbl_user NATURAL JOIN tbl_user_role WHERE id='$id' ";
+                      $sqlQuery = mysqli_query($dbconnect, $query);
+                      $row = mysqli_fetch_array($sqlQuery);
+                 ?>
                 <tr>
                     <td>Name</td>
                     <td>:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>:</td>
-                    <td></td>
+                    <td><?php echo $row['name']; ?></td>
                 </tr>
                 <tr>
                     <td>Phone</td>
                     <td>:</td>
-                    <td></td>
+                    <td><?php echo $row['phone']; ?></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td><?php echo $row['email']; ?></td>
                 </tr>
                 <tr>
                     <td>Username</td>
                     <td>:</td>
-                    <td></td>
+                    <td><?php echo $row['username']; ?></td>
                 </tr>
                 <tr>
                     <td>User Role</td>
                     <td>:</td>
-                    <td></td>
+                    <td><?php echo $row['role_name']; ?></td>
                 </tr>
                 <tr>
+                    <td>User Photo</td>
+                    <td>:</td>
+                    <td><img class="userPhoto" src="uploads/<?php echo $row['image']; ?>" width="100" alt=""></td>
+                </tr>
+              <!--   <tr>
                     <td>Reg. Time</td>
                     <td>:</td>
                     <td>29.04.2017 10:40:15</td>
-                </tr>
+                </tr> -->
             </table>
           </div>
           <div class="col-md-2">

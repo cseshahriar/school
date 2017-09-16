@@ -11,17 +11,18 @@
       $Username = $_POST['username'];
       $Password = md5($_POST['password']);
       $Role = $_POST['role'];
+
       $img = $_FILES['img'];
-      $imgName = "User-".time()."-".rand(1,10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
+      $imgName = "User-".time()."-".rand(1000, 10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
       //img name.path
-      if(!empty($Name && $Email && $Username && $Password &&  $Role )){
+      if(!empty($Name && $Email && $Username && $Password && $Role)){
         $insert = "INSERT INTO tbl_user(name, phone, email, username, password, role_id, image) 
-        VALUES('$Name', '$Phone', '$Email', , '$Username', '$Password', '$Role', '$imgName')";
+        VALUES('$Name','$Phone','$Email','$Username','$Password','$Role','$imgName')";
         $insertQuery = mysqli_query($dbconnect, $insert);
         if($insertQuery){
-          move_uploaded_file($img['tmp_name'], 'user-img/'.$imgName);
+          move_uploaded_file($img['tmp_name'], 'uploads/'.$imgName);
           $msg = '<span id="message">Insertion Successfuly</span>';
-          header('Location:all-user.php'); //redirect
+          header('Location: all-user.php'); //redirect
         }else{
           $msg = '<span id="message">Insertion Failed!</span>';
         }
