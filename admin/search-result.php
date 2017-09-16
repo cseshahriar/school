@@ -1,8 +1,9 @@
 <?php
-	require_once('functions/function.php');
-	get_header();
-	get_sidebar();
-	get_bread(); 
+	require_once('functions/admin-functions.php');
+    getAdminHeader();
+    getAdminSidebar();
+    getBreadcrum();
+    $search = $_POST['search'];
 ?>
 <div class="col-md-12">
     <div class="panel panel-primary">
@@ -31,23 +32,22 @@
                 <?php 
                     //$id = $_GET['searchid'];
                     $search = $_POST['search'];
-                    $query = "SELECT * FROM cit_user NATURAL JOIN cit_role WHERE name LIKE '%$search%' OR email LIKE '$search' OR phone LIKE '$search' ";
-                    $sqlQuery = mysqli_query($con, $query);
-                    while($data = mysqli_fetch_array($sqlQuery)){ ?>
-
+                    $query = "SELECT * FROM tbl_user NATURAL JOIN tbl_user_role WHERE name LIKE '%$search%' OR email LIKE '$search' OR phone LIKE '$search' ";
+                    $sqlQuery = mysqli_query($dbconnect, $query);
+                    while($row = mysqli_fetch_array($sqlQuery)) : ?>
                     <tr>
-                        <td><?= $data['name']; ?></td>
-                        <td><?= $data['email']; ?></td>
-                        <td><?= $data['phone']; ?></td>
-                        <td class="hidden-xs"><?= $data['username']; ?></td>
-                        <td class="hidden-xs"><?= $data['role_name']; ?></td>
+                        <td><?= $row['name']; ?></td>
+                        <td><?= $row['email']; ?></td>
+                        <td><?= $row['phone']; ?></td>
+                        <td class="hidden-xs"><?= $row['username']; ?></td>
+                        <td class="hidden-xs"><?= $row['role_name']; ?></td>
                         <td>
-                            <a href="view-user.php"><i class="fa fa-plus-square fa-lg"></i></a>
-                            <a href="edit-user.php"><i class="fa fa-pencil-square fa-lg"></i></a>
-                            <a href="delete-user.php"><i class="fa fa-trash fa-lg"></i></a>
-                        </td>
+                          <a href="view-user.php?viewId=<?= $row['id']; ?>"><i class="fa fa-eye fa-lg"></i></a>
+                          <a href="edit-user.php?editId=<?= $row['id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="delete-user.php?deleteId=<?= $row['id']; ?>" onclick="return confirmation()"><i class="fa fa-trash fa-lg"></i></a>
+                         </td>
                     </tr>
-                      <?php  } ?>
+                      <?php  endwhile; ?>
 
                 </tbody>
           </table>
@@ -98,5 +98,5 @@
     </form>
 </div>
 <?php
-	get_footer();
+	getAdminFooter();
 ?>          

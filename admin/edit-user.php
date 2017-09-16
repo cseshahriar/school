@@ -104,8 +104,9 @@
           <div class="form-group">
             <label for="" class="col-sm-3 control-label">User Photo</label>
             <div class="col-sm-8">
-              <input type="file" name="img">
-              <img src="" alt="" width="40" class="pull-right edit-photo"> 
+              <input type="file" name="img"  value="<?= $row['image']; ?>" /> <!-- for change -->
+              <img src="uploads/<?= $row['image']; ?>" width="100" class="pull-right edit-photo"> 
+              <!-- img can't catch / image not save -->
             </div>
           </div>
       </div>
