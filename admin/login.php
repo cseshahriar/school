@@ -1,3 +1,4 @@
+<?php require_once('functions/admin-functions.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,16 +20,40 @@
                     </div>     
                     <div style="padding-top:30px" class="panel-body" >
 
-                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12">
+                            <?php 
+                                if(!empty($_POST)){
+                                    $uname = $_POST['username']; 
+                                    $upassword = md5($_POST['password']);
+                                    $query = "SELECT * FROM tbl_user NATURAL JOIN tbl_user_role WHERE username='$uname' AND password='$upassword' "; 
+                                    //form ar username and password ar bittite database theke data ute asbe(it's like search query / sodo match hole ute asbe)
+                                    $sqlQuery = mysqli_query($dbconnect, $query);
+                                    $row = mysqli_fetch_array($sqlQuery);
+                                    if($row){
+                                        $_SESSION['user'] = $row['username']; 
+                                        //session user store from database
+                                        $_SESSION['userid'] = $row['id']; 
+                                        $_SESSION['name'] = $row['name']; 
+                                        $_SESSION['role'] = $row['role_id']; 
+                                        $_SESSION['image'] = $row['image']; //not work
+                                       header('Location: index.php');
+                                    }else{
+                                        echo "Invalid Usernaem and Password";
+                                    }
+                                }
+                             ?>
+                        </div>
                         <form id="loginform" class="form-horizontal" role="form" method="post">
-
                             <div style="margin-bottom: 25px" class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email"> 
                             </div>
-
                             <div style="margin-bottom: 25px" class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-lock"></i>
+                                </span>
                                 <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
                             </div>
                          <!--    <div class="input-group">

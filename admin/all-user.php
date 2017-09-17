@@ -1,5 +1,7 @@
 <?php
 	require_once('functions/admin-functions.php');
+  needLogIn();
+  if($_SESSION['role'] <=1){
 	getAdminHeader();
   getAdminSidebar();
   getBreadcrum();
@@ -102,4 +104,7 @@
 </script>
 <?php
 	 getAdminFooter();
+  }else{ //if not session <=1
+    echo "Access Denied!";
+  }
 ?>          
