@@ -1,10 +1,11 @@
+
 <div class="container-fluid content_full">
     <div class="row">
         <div class="col-md-2 sidebar pd0">
             <div class="side_user">
-                <img class="img-responsive" src="uploads/avatar.png"/>
+                <img class="img-responsive" src="uploads/<?= $_SESSION['photo']; ?>"/>
                 <h4><?php echo $_SESSION['name']; ?></h4>
-                <span><i class="fa fa-circle"></i> Online</span>
+                <span><i class="fa fa-circle"></i>  Online</span>
             </div>
             <h2>MAIN NAVIGATION</h2>
             <ul>
@@ -13,7 +14,7 @@
                     <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
                 <?php } ?>
                 <?php if($_SESSION['role'] <= 2){ ?>
-                <li><a href="#"><i class="fa fa-gamepad"></i> Banner</a></li>
+                <li><a href="all-sliders.php"><i class="fa fa-sliders"></i> Sliders</a></li>
                 <li><a href="#"><i class="fa fa-image"></i> Gallery</a></li>
                 <?php } ?>
                 <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>

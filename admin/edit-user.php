@@ -15,9 +15,9 @@
       $Password = md5($_POST['password']);
       $Role = $_POST['role'];
       $img = $_FILES['img'];
-      $imgName = "User-".time()."-".rand(1,10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
+      $imgName = "User-".time()."-".rand(1000,10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
       //img name.path
-      if(!empty($Name && $Email && $Password &&  $Role )){
+      if(!empty($Name && $Email && $Password &&  $Role)){
         $update = "UPDATE tbl_user SET name='$Name', phone='$Phone', email='$Email', password='$Password', role_id='$Role', image='$imgName' WHERE id='$id' ";
         $updateQuery = mysqli_query($dbconnect, $update);
 
@@ -103,11 +103,14 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="" class="col-sm-3 control-label">User Photo</label>
+            <label for="" class="col-sm-3 control-label">Image</label>
             <div class="col-sm-8">
-              <input type="file" name="img"  value="<?= $row['image']; ?>" /> <!-- for change -->
-              <img src="uploads/<?= $row['image']; ?>" width="100" class="pull-right edit-photo"> 
-              <!-- img can't catch / image not save -->
+              <?php 
+                  $imageQuery = "SELECT * FROM tbl_user WHERE id='$id' ";
+                  $imageSqlQuery = mysqli_query($dbconnect, $imageQuery);
+                  $image = mysqli_fetch_array($imageSqlQuery);  ?>
+              <img height="100" src="uploads/<?= $image['image']; ?>" alt="image">
+              <input type="file" value="<?= $image['image']; ?>" name="img" style="margin-top: 10px;">
             </div>
           </div>
       </div>

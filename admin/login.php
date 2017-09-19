@@ -35,8 +35,8 @@
                                         $_SESSION['userid'] = $row['id']; 
                                         $_SESSION['name'] = $row['name']; 
                                         $_SESSION['role'] = $row['role_id']; 
-                                        $_SESSION['image'] = $row['image']; //not work
-                                       header('Location: index.php');
+                                        $_SESSION['photo'] = $row['image']; //not work
+                                        header('Location: index.php');
                                     }else{
                                         echo "Invalid Usernaem and Password";
                                     }

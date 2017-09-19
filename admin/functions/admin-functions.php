@@ -4,7 +4,7 @@
 		require_once('includes/header.php');	
 	}
 	function getAdminSidebar(){
-		require_once('includes/left-sidebar.php');	
+		require_once('includes/sidebar.php');	
 	}
 	function getBreadcrum(){
 		include_once('includes/breadcrum.php');	
