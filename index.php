@@ -44,10 +44,15 @@ getHeader();
     <div class="container">
         <div class="col-sm-12 text-center">
              <div class="welcome-item">
-                 <h5>Welcome to</h5>
-                 <h4 class="title-school">scholas<span>tic</span>a school</h4>
-                 <p>Scholastica was established in 1977 by Mrs. Yasmeen Murshed. It was founded with a mission to provide a balanced and well-rounded education for all our students, using English as the primary medium of instruction but placing equal emphasis on Bangla. Scholastica's mission is to build curious, knowledgeable and caring young individuals, who will be equipped to tackle head-on the challenges of our modern-day "global village". They will aspire to become responsible citizens, who will embrace and respect people from other cultures and walks of life.</p>
-                 <a class="btn-create" href="#">read more</a>
+                <?php 
+                  $select = "SELECT * FROM posts WHERE post_cat_id='1' ";
+                  $query = mysqli_query($dbconnect, $select);
+                  $row = mysqli_fetch_array($query);
+                 ?>
+                 <h5><?php echo $row['post_title']; ?></h5>
+                 <h4 class="title-school"><span><?php echo $row['post_subtitle']; ?></span></h4>
+                 <p class="title-school"><?php echo $row['post_details']; ?></p>
+                 <a class="btn-create" href="<?= $row['post_btn_url']; ?>"><?= $row['post_btn_txt']; ?></a>
              </div>
         </div>
     </div>
@@ -66,244 +71,94 @@ getHeader();
     </div>
     <div class="clearfix"></div>
     <div class="succes-slider">
-       <div class="col-sm-4">
+        <?php 
+            $select = "SELECT * FROM news WHERE news_cat_id='1' ";
+            $query = mysqli_query($dbconnect, $select);
+            while($news = mysqli_fetch_array($query)) : ?>
+        <div class="col-sm-4">
           <div class="success-item">
             <div class="image-box">
-                <img class="img-responsive" src="img/success-one.jpg" alt="Image-1">
-                <h2>Student Affairs Unit</h2>
+              <img class="img-responsive" src="admin/uploads/<?= $news['news_image'];?>" alt="Image-1">
+                <h2><?= $news['news_title'];?></h2>
             </div>
             <div class="text-desc">
-                <h3>Student Affairs Unit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-               <a href="#" class="btn">Learn more</a>
+                <h3><?= $news['news_title'];?></h3>
+                <p><?= $news['news_details'];?></p>
+               <a href="#" class="btn"><?= $news['news_btn_text'];?></a>
             </div>
           </div>
         </div><!--col-sm-4-main end-->
-        <div class="col-sm-4">
-          <div class="success-item">
-              <div class="image-box">
-                  <img class="img-responsive" src="img/sucees-two.jpg" alt="Image-1">
-                  <h2>Student Affairs Unit</h2>
-              </div>
-              <div class="text-desc">
-                  <h3>Student Affairs Unit</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <a href="#" class="btn">Learn more</a>
-              </div>
-            </div>
-        </div><!--col-sm-4-main end-->
-        <div class="col-sm-4">
-            <div class="success-item">
-                <div class="image-box">
-                  <img class="img-responsive" src="img/success-three.jpg" alt="Image-1">
-                  <h2>Student Affairs Unit</h2>
-                </div>
-                <div class="text-desc">
-                    <h3>Student Affairs Unit</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="btn">Learn more</a>
-                </div>
-            </div>
-        </div><!--col-sm-4-main end-->
-        <div class="col-sm-4">
-         <div class="success-item">
-             <div class="image-box">
-                <img class="img-responsive" src="img/success-one.jpg" alt="Image-1">
-                <h2>Student Affairs Unit</h2>
-              </div>
-              <div class="text-desc">
-                 <h3>Student Affairs Unit</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <a href="#" class="btn">Learn more</a>
-              </div>
-          </div>
-        </div><!--col-sm-4-main end-->
-        <div class="col-sm-4">
-           <div class="success-item">
-              <div class="image-box">
-                  <img class="img-responsive" src="img/sucees-two.jpg" alt="Image-1">
-                  <h2>Student Affairs Unit</h2>
-                </div>
-                <div class="text-desc">
-                   <h3>Student Affairs Unit</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                   <a href="#" class="btn">Learn more</a>
-                </div>
-            </div>
-        </div><!--col-sm-4-main end-->
-        <div class="col-sm-4">
-            <div class="success-item">
-                <div class="image-box">
-                    <img class="img-responsive" src="img/success-three.jpg" alt="Image-1">
-                    <h2>Student Affairs Unit</h2>
-                </div>
-                <div class="text-desc">
-                   <h3>Student Affairs Unit</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                   <a href="#" class="btn">Learn more</a>
-                </div>
-              </div>
-        </div><!--col-sm-4-main end-->  
+        <?php endwhile; ?>
       </div><!--succes-slider-->
   </div> <!--container end-->
 </section>
-<!-- / latest news -->    
+<!-- / latest news -->  
+
 <section class="section-default">
   <div class="container">
       <div class="col-sm-6">
-           <div class="news-event">
-               <h2>Announcements 2015-2016</h2> 
+            <div class="news-event">
+               <h2>Announcements 2015-2016</h2>
                <div class="news-slick">
-                  <div class="news-item">
-                   <a href="#">
-                     <div class="news-clock">
-                         <h4>March</h4>
-                         <h3>06</h3>
-                     </div>
-                     <div class="news-details">
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...</p>
-                     </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
+                <?php 
+                  $select = "SELECT * FROM news WHERE news_cat_id='2' ";
+                  $query = mysqli_query($dbconnect, $select);
+                  while($announce = mysqli_fetch_array($query)) : ?>
+
                  <div class="news-item">
                    <a href="#">
                      <div class="news-clock">
-                         <h4>March</h4>
-                         <h3>06</h3>
+                        <?php 
+                            $date = explode('-',$announce['news_date']);
+                            $month = $date[1];
+                            $dateObj = DateTime::createFromFormat('!m', $month);
+                            $monthName = $dateObj->format('F');
+                            $day = $date[2]; 
+                        ?>
+                         <h4><?php echo $monthName; ?></h4>
+                         <h3><?php echo $day; ?></h3>
                      </div>
                      <div class="news-details">
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...</p>
+                         <p><?= $announce['news_details'] ?></p>
                      </div>
                      <div class="clearfix"></div>
                    </a>
                  </div><!--news-item end-->
-                 <div class="news-item">
-                   <a href="#">
-                     <div class="news-clock">
-                         <h4>March</h4>
-                         <h3>06</h3>
-                     </div>
-                     <div class="news-details">
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...</p>
-                     </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
-                 <div class="news-item">
-                   <a href="#">
-                     <div class="news-clock">
-                         <h4>March</h4>
-                         <h3>06</h3>
-                     </div>
-                     <div class="news-details">
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...</p>
-                     </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
-                 
-                 <div class="news-item">
-                   <a href="#">
-                     <div class="news-clock">
-                         <h4>March</h4>
-                         <h3>06</h3>
-                     </div>
-                     <div class="news-details">
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...</p>
-                     </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
-                 <div class="news-item">
-                   <a href="#">
-                     <div class="news-clock">
-                         <h4>March</h4>
-                         <h3>06</h3>
-                     </div>
-                     <div class="news-details">
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...</p>
-                     </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
+               <?php endwhile; ?>
+
+
                </div>
                 <a href="#" class="news-info"><span>read more</span><i class="fa fa-angle-right"></i></a>
            </div> <!--news-event end-->
       </div><!--col-sm-6 end-->
-      <div class="col-sm-6">
-           <div class="news-event">
+
+       <div class="col-sm-6">
+          <div class="news-event">
                <h2>Upcoming Events</h2> 
                 <div class="news-right">
-                    <div class="right-item">
-                     <a href="#">
-                        <div class="news-clock">
-                        <img class="img-responsive" src="img/news-1.jpg" alt="">
-                         </div>
-                         <div class="news-details">
-                         <h5>29, March, 2016</h5>
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...</p>
-                        </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
-                 
-                 <div class="right-item">
-                     <a href="#">
-                        <div class="news-clock">
-                        <img class="img-responsive" src="img/news-1.jpg" alt="">
-                         </div>
-                         <div class="news-details">
-                         <h5>29, March, 2016</h5>
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...</p>
-                        </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
+                  <?php 
+                    $select = "SELECT * FROM news WHERE news_cat_id='3' ";
+                    $query = mysqli_query($dbconnect, $select);
+                    while($event = mysqli_fetch_array($query)) : ?>
+                      <div class="right-item">
+                         <a href="#">
+                            <div class="news-clockr">
+                                <img class="img-responsive" src="admin/uploads/<?= $event['news_image']; ?>" alt="">
+                            </div>
+                            <div class="news-detailsr">
+                               <h5><?= $event['news_date']; ?></h5>
+                               <p><?= $event['news_details']; ?> ...</p>
+                            </div>
+                            <div class="clearfix"></div>
+                          </a>
+                      </div><!--news-item end-->
+                    <?php endwhile; ?>
+                
+                </div><!--news-right end-->   
+              <a href="#" class="news-info"><span>read more</span><i class="fa fa-angle-right"></i></a>
+          </div> <!--news-event end-->
+       </div><!--col-sm-6 end-->
 
-                 <div class="right-item">
-                     <a href="#">
-                        <div class="news-clock">
-                        <img class="img-responsive" src="img/news-1.jpg" alt="">
-                         </div>
-                         <div class="news-details">
-                         <h5>29, March, 2016</h5>
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...</p>
-                        </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
-
-                 <div class="right-item">
-                     <a href="#">
-                        <div class="news-clock">
-                        <img class="img-responsive" src="img/news-1.jpg" alt="">
-                         </div>
-                         <div class="news-details">
-                         <h5>29, March, 2016</h5>
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...</p>
-                        </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
-
-                 <div class="right-item">
-                     <a href="#">
-                        <div class="news-clock">
-                        <img class="img-responsive" src="img/news-1.jpg" alt="">
-                         </div>
-                         <div class="news-details">
-                         <h5>29, March, 2016</h5>
-                         <p>Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...</p>
-                        </div>
-                     <div class="clearfix"></div>
-                   </a>
-                 </div><!--news-item end-->
-              </div><!--news-right end-->
-              
-               <a href="#" class="news-info"><span>read more</span><i class="fa fa-angle-right"></i></a>
-           </div> <!--news-event end-->
-      </div><!--col-sm-6 end-->  
   </div>
 </section>   
 <?php  

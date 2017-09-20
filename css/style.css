@@ -401,7 +401,7 @@ a, a:active, a:hover, a:focus{
    display:block;
     float: left;
     padding: 13px 10px;
-    width: 13%;
+    width: 20%;
     background-color: #00a651;
 }
 
@@ -423,7 +423,7 @@ a, a:active, a:hover, a:focus{
 
 .news-event .news-item .news-details{
   display: block;  
-    width: 85%;
+    width: 80%;
      float: left;
 }
 
@@ -451,23 +451,22 @@ a, a:active, a:hover, a:focus{
     background-color: #fff;
     border: 1px solid #fff;
 }
-
-.news-right .right-item a .news-clock{
+.news-event .news-item a .news-clock{
    display:block;
     float: left;
+    padding: 13px 10px;
     width: 20%;
+    background-color: #00a651;
 }
 
 .news-right .right-item .news-clock img{
   width: 100%;
     height: 100px;
 }
-
-.news-right .right-item .news-details{
-   display: block;     
-    padding-left: 2%;
+.news-event .news-item .news-details{
+  display: block;  
     width: 80%;
-    float: left;
+     float: left;
 }
 
 .news-right .right-item .news-details h5{
@@ -493,7 +492,14 @@ a, a:active, a:hover, a:focus{
      color: #7f234b !important;
     text-decoration: underline;
 }
-
+.news-clockr{
+  width:25%;
+  float: left;
+}
+.news-detailsr{
+  width: 75%;
+  float: right;
+}
 
 .news-info {
      display: inline-block;
