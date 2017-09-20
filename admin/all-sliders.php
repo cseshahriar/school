@@ -10,10 +10,10 @@
     <div class="panel panel-primary">
         <div class="panel-heading">
             <div class="col-md-9 heading_title">
-                  All User Information
+                  All Sliders
              </div>
              <div class="col-md-3 text-right">
-                <a href="add-user.php" class="btn btn-sm btn btn-primary"><i class="fa fa-plus-circle"></i> Add User</a>
+                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Slider</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -42,19 +42,24 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "SELECT * FROM tbl_user NATURAL JOIN tbl_user_role";
+                  $query = "SELECT * FROM sliders";
                   $sqlQuery = mysqli_query($dbconnect, $query);
                   while($row = mysqli_fetch_array($sqlQuery)) : ?>
                   <tr>
-                      <td><?= $row['name']; ?></td>
-                      <td><?= $row['phone']; ?></td>
-                      <td><?= $row['email']; ?></td>
-                      <td class="hidden-xs"><?= $row['username']; ?></td>
-                      <td class="hidden-xs"><?= $row['role_name']; ?></td>
+                      <td><?= substr($row['slide_title'], 0,15); ?>...</td>
+                      <td><?= substr($row['slide_description'], 0,20); ?>...</td>
+                      <td><?= $row['slide_btn_text']; ?></td>
+                      <td class="hidden-xs"><?= $row['slide_btn_url']; ?></td>
+                      <td class="hidden-xs">
+                        <?php 
+                          if($row['slide_image'] == '') : ?>
+                            <img src="uploads/noimagefound.jpg" width="200" height="100" alt="">
+                          <?php else: ?>
+                            <img src="uploads/<?= $row['slide_image']; ?>" width="200" alt="">
+                          <?php endif; ?>
+                      </td>
                       <td>
-                          <a href="view-user.php?viewId=<?= $row['id']; ?>"><i class="fa fa-eye fa-lg"></i></a>
-                          <a href="edit-user.php?editId=<?= $row['id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
-                          <a href="delete-user.php?deleteId=<?= $row['id']; ?>" onclick="return confirmation()"><i class="fa fa-trash fa-lg"></i></a>
+                          <a href="edit-slider.php?sliderId=<?= $row['slide_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
                       </td>
                   </tr>
                 <?php endwhile; ?>
