@@ -1,3 +1,4 @@
+<?php require_once('config.php'); ?>
 <!-- photo slider -->
 <section>
   <div class="container">
@@ -11,94 +12,26 @@
       </div>
       <div class="clearfix"></div>  
       <div class="footer-slick">
+      <?php 
+          $select = "SELECT * FROM photo_slider";
+          $query = mysqli_query($dbconnect, $select);
+          while($pslider = mysqli_fetch_array($query)) : ?>
           <div class="col-sm-4"><!--col-sm-4 start-->
               <div class="footer-item">
                 <div class="port-1 effect-2">
                   <div class="image-box">
-                      <img src="img/img-2.jpg" alt="Image-2">
+                      <img src="admin/uploads/<?= $pslider['pslide_image']; ?>" alt="Image-2">
                   </div>
                   <div class="text-desc">
-                    <h3>Student Affairs Unit</h3>
-                      <p>Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third position.</p>
-                    <a href="#" class="btn">Learn more</a>
+                    <h3><?= $pslider['pslide_title']; ?></h3>
+                      <p><?= $pslider['pslide_details']; ?></p>
+                    <a href="#" class="btn"><?= $pslider['pslide_btn_text']; ?></a>
                   </div>
                 </div>
               </div>
           </div><!--col-sm-4 end-->
+        <?php endwhile; ?>
 
-          <div class="col-sm-4"><!--col-sm-4 start-->
-              <div class="footer-item">
-                  <div class="port-1 effect-2">
-                    <div class="image-box">
-                        <img src="img/img-3.jpg" alt="Image-2">
-                    </div>
-                    <div class="text-desc">
-                      <h3>Student Affairs Unit</h3>
-                        <p>Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third .</p>
-                      <a href="#" class="btn">Learn more</a>
-                    </div>
-                  </div>
-              </div>
-          </div><!--col-sm-4 end-->
-      
-          <div class="col-sm-4"><!--col-sm-4 start-->
-               <div class="footer-item">
-                  <div class="port-1 effect-2">
-                    <div class="image-box">
-                        <img src="img/img-4.jpg" alt="Image-2">
-                    </div>
-                    <div class="text-desc">
-                      <h3>Student Affairs Unit</h3>
-                        <p>Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third.</p>
-                      <a href="#" class="btn">Learn more</a>
-                    </div>
-                  </div>
-               </div>
-          </div><!--col-sm-4 end-->
-
-          <div class="col-sm-4"><!--col-sm-4 start-->
-              <div class="footer-item">
-                 <div class="port-1 effect-2">
-                    <div class="image-box">
-                      <img src="img/img-5.jpg" alt="Image-2">
-                    </div>
-                    <div class="text-desc">
-                      <h3>Student Affairs Unit</h3>
-                        <p>Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved.</p>
-                      <a href="#" class="btn">Learn more</a>
-                    </div>
-                 </div>
-              </div>
-          </div><!--col-sm-4 end-->
-     
-        <div class="col-sm-4"><!--col-sm-4 start-->
-           <div class="footer-item">
-                <div class="port-1 effect-2">
-                  <div class="image-box">
-                    <img src="img/img-6.jpg" alt="Image-2">
-                  </div>
-                  <div class="text-desc">
-                    <h3>Student Affairs Unit</h3>
-                      <p>Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved.</p>
-                    <a href="#" class="btn">Learn more</a>
-                  </div>
-                </div>
-            </div>
-        </div><!--col-sm-4 end-->
-        <div class="col-sm-4"><!--col-sm-4 start-->
-            <div class="footer-item">
-               <div class="port-1 effect-2">
-                  <div class="image-box">
-                    <img src="img/img-7.jpg" alt="Image-2">
-                  </div>
-                  <div class="text-desc">
-                      <h3>Student Affairs Unit</h3>
-                      <p>Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved.</p>
-                      <a href="#" class="btn">Learn more</a>
-                  </div>
-              </div>
-            </div>
-       </div><!--col-sm-4 end-->
     </div><!--footer-slick-->
   </div>
 </section> 

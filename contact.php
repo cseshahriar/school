@@ -1,7 +1,21 @@
 <?php  
   require_once('function/functions.php'); 
-  getHeader();
-  getThemePart('about-banner');
+  getHeader(); ?>
+<!-- banner -->
+<?php 
+  $select = "SELECT * FROM banner WHERE banner_cat_id='5' ";
+  $query = mysqli_query($dbconnect, $select);
+  $row = mysqli_fetch_array($query) ?>
+<section class="academic-banner" style="background-image: url(admin/uploads/<?= $row['banner_image']; ?>);">
+  <div class="about-opacity">
+     <div class="container">
+         <h2><?= $row['banner_title']; ?></h2>
+         <p><?= $row['banner_subtitle']; ?></p>
+     </div> 
+  </div>
+</section>
+<!-- / banner -->
+  <?php
   getBreadcrumb();
 ?>
 <!--about us page-->        

@@ -1,4 +1,5 @@
-<section class="academic-banner">
+<!-- banner -->
+<section class="academic-banner" style="background-image: url(../img/academic-banner.jpg);">
   <div class="about-opacity">
      <div class="container">
          <h2>scholastica school</h2>
@@ -6,3 +7,4 @@
      </div> 
   </div>
 </section>
+<!-- / banner -->

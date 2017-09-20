@@ -756,19 +756,16 @@ background-color:rgba(7,7,7,0.6);
     font-size: 14px;
     
 }
-
 .about-banner {
     height: 266px;
-    background-image: url(../img/banner-about.jpg);
+   /* background-image: url(../img/banner-about.jpg);*/
     background-size: cover;
 }
-
 .academic-banner {
     height: 266px;
-    background-image: url(../img/academic-banner.jpg);
+    /*background-image: url(../img/academic-banner.jpg);*/
     background-size: cover;
 }
-
 .about-opacity {
     height: 266px;
     background-color: rgba(20,19,22,0.3);
