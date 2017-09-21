@@ -2,12 +2,12 @@
   require_once('function/functions.php'); 
   getHeader(); 
   //for message insert
-  if(!empty($_POST)){
+  if(isset($_POST['sent'])){
     $name = testUserInput($_POST['name']);
     $email = testUserInput($_POST['email']);
     $subject =testUserInput($_POST['subject']);
     $massage = testUserInput($_POST['massage']);
-    if(!empty($name AND $email AND $subject AND $massage)){
+    if(!empty($name && $email && $subject && $massage)){
       $select = "INSERT INTO comments(comment_name, comment_email, comment_subject, message)
       VALUES('$name', ' $email', '$subject', '$massage')";
       $query = mysqli_query($dbconnect, $select);
@@ -16,9 +16,9 @@
       }else{
          $msg = '<span id="massages" class="text-danger">Massage sent faild!</span>';
       }
+    }else{
+      $msg = '<span id="massages" class="text-danger">All input field must not be empty!</span>';
     }
-  }else{
-    $msg = '<span id="massages" class="text-danger">All input field must not be empty!</span>';
   }
   //data filtering function
     function testUserInput($data){
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-sm-6 pr0">
                      <textarea name="massage"  rows="7" placeholder="Type Message"></textarea>
-                    <input type="submit" value="Sent Message">  
+                    <input type="submit" name="sent" value="Sent Message">  
                 </div>
              </form>
           </div>
@@ -94,7 +94,7 @@
   </div>
 </section>
 <!-- jquery msg hide -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/vendor/jquery-1.12.0.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
       $("#massages").show();
