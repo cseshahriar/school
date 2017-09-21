@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2017 at 06:44 AM
+-- Generation Time: Sep 21, 2017 at 07:55 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -91,7 +91,8 @@ INSERT INTO `comments` (`commnt_id`, `comment_name`, `comment_email`, `comment_s
 (3, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2'),
 (4, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2'),
 (5, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2'),
-(6, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2');
+(6, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2'),
+(7, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 3');
 
 -- --------------------------------------------------------
 
@@ -105,9 +106,21 @@ CREATE TABLE `footer_info` (
   `finfo_address_one` varchar(255) NOT NULL,
   `finfo_address_two` varchar(255) NOT NULL,
   `finfo_address_three` varchar(255) NOT NULL,
+  `finfo_address_four` varchar(255) NOT NULL,
   `finfo_image` varchar(255) NOT NULL,
   `finfo_cat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `footer_info`
+--
+
+INSERT INTO `footer_info` (`finfo_id`, `finfo_title`, `finfo_address_one`, `finfo_address_two`, `finfo_address_three`, `finfo_address_four`, `finfo_image`, `finfo_cat_id`) VALUES
+(1, 'Central Office:', 'Ascent Group House 3/D, Road 2/A, Block J,Baridhara, ', '<span>Tele: 8860147,8860132,8819500,</span><span>8815222,8856019-20 &amp; 9887277</span>', '<span>Fax: (+88 02) 8813141</span> <span> Email: info@scholasticabd.com</span>', '<b><a href=\"\"><i class=\"fa fa-facebook\"></i></a></b>\r\n                   <b><a href=\"\"><i class=\"fa fa-twitter\"></i></a></b>\r\n                   <b><a href=\"\"><i class=\"fa fa-google-plus\"></i></a></b>\r\n', '', 1),
+(2, 'Campus Address:', '<span>Senior campus,Uttara, Plot 2,</span>\r\n                   <span>Road 8 &amp; 9, Sector 1,</span>\r\n                   <span>Uttara Model Town,</span>\r\n                   <span>Dhaka 1230</span>\r\n', '<span>Junior campus,Uttara, Plot 1, Road </span><span>21, Sector 4, Uttara Model Town,</span> Dhaka 1230', '<span>Senior Campus,Mirpur, Plot 2/B-2,</span> <span> 2/C line one, Section 13, Mirpur,</span> Dhaka 1216', '', '', 2),
+(3, 'Campus Address:', '<span>Junior campus,Dhanmondi, Plot 78,</span>\r\n                   <span>Road 8/A, Mirza Golam Hafiz Road,</span>\r\n                   <span> Dhanmondi R/A, Dhaka 1209</span>\r\n', '<span>Junior campus,Gulshan, Plot </span>\r\n                   <span>lot NE(D)3,Gulshan Avenue,North,Shaheed</span>\r\n                   <span> Major , Najmul Haque Sarak,Gulshan 2,</span>\r\n                   <span>Dhaka 1212</span>\r\n', '', '', '', 2),
+(4, 'Associate School of:', '', '', '', '', 'accociate.png', 3),
+(5, 'Member of:', 'Dhaka International Schools Association (DISA)\r\n               Bangladesh Private English Medium Schools Forum ', '', '', '', '', 3);
 
 -- --------------------------------------------------------
 
@@ -119,6 +132,15 @@ CREATE TABLE `footer_info_category` (
   `finfo_cat_id` int(11) NOT NULL,
   `finfo_cat_name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `footer_info_category`
+--
+
+INSERT INTO `footer_info_category` (`finfo_cat_id`, `finfo_cat_name`) VALUES
+(1, 'Central Office'),
+(2, 'Campus Address'),
+(3, 'Associate School ');
 
 -- --------------------------------------------------------
 
@@ -384,7 +406,8 @@ ALTER TABLE `comments`
 -- Indexes for table `footer_info`
 --
 ALTER TABLE `footer_info`
-  ADD PRIMARY KEY (`finfo_id`);
+  ADD PRIMARY KEY (`finfo_id`),
+  ADD KEY `finfo_cat_id` (`finfo_cat_id`);
 
 --
 -- Indexes for table `footer_info_category`
@@ -473,17 +496,17 @@ ALTER TABLE `banner_category`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commnt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `commnt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `footer_info`
 --
 ALTER TABLE `footer_info`
-  MODIFY `finfo_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `finfo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `footer_info_category`
 --
 ALTER TABLE `footer_info_category`
-  MODIFY `finfo_cat_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `finfo_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `menu`
 --
@@ -543,6 +566,12 @@ ALTER TABLE `tbl_user_role`
 --
 ALTER TABLE `banner`
   ADD CONSTRAINT `banner_ibfk_1` FOREIGN KEY (`banner_cat_id`) REFERENCES `banner_category` (`banner_cat_id`);
+
+--
+-- Constraints for table `footer_info`
+--
+ALTER TABLE `footer_info`
+  ADD CONSTRAINT `footer_info_ibfk_1` FOREIGN KEY (`finfo_cat_id`) REFERENCES `footer_info_category` (`finfo_cat_id`);
 
 --
 -- Constraints for table `news`

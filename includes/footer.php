@@ -4,7 +4,7 @@
  <div class="container">
    <div class="col-sm-3">
        <div class="footer-details">
-           <h2>Central Office:</h2>
+           <h2>Main Campus :</h2>
            <ul>
                <li>Ascent Group House 3/D, Road 2/A, Block J,Baridhara, </li>
                <li><span>Tele: 8860147,8860132,8819500,</span><span>8815222,8856019-20 &amp; 9887277</span></li>
