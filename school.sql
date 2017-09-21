@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2017 at 04:49 PM
+-- Generation Time: Sep 21, 2017 at 06:44 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -66,6 +66,32 @@ INSERT INTO `banner_category` (`banner_cat_id`, `banner_cat_name`) VALUES
 (3, 'Curriculum'),
 (4, 'About '),
 (5, 'Contact');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `commnt_id` int(11) NOT NULL,
+  `comment_name` varchar(50) NOT NULL,
+  `comment_email` varchar(100) NOT NULL,
+  `comment_subject` varchar(100) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`commnt_id`, `comment_name`, `comment_email`, `comment_subject`, `message`) VALUES
+(1, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message'),
+(2, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message'),
+(3, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2'),
+(4, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2'),
+(5, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2'),
+(6, 'shahriar', ' hosen.shahriar.cse@gmail.com', 'test', 'test message 2');
 
 -- --------------------------------------------------------
 
@@ -349,6 +375,12 @@ ALTER TABLE `banner_category`
   ADD PRIMARY KEY (`banner_cat_id`);
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`commnt_id`);
+
+--
 -- Indexes for table `footer_info`
 --
 ALTER TABLE `footer_info`
@@ -437,6 +469,11 @@ ALTER TABLE `banner`
 --
 ALTER TABLE `banner_category`
   MODIFY `banner_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `commnt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `footer_info`
 --
