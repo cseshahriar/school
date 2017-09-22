@@ -177,9 +177,15 @@ getHeader();
                <li><?= $row['finfo_address_one']; ?></li>
                <li><?= $row['finfo_address_two']; ?></li>
                <li><?= $row['finfo_address_three']; ?></li>
-               <li>
-                   <?= $row['finfo_address_four']; ?>
-               </li>
+                <li>
+                <?php 
+                  $select = "SELECT * FROM social";
+                  $query = mysqli_query($dbconnect, $select);
+                  while($row = mysqli_fetch_array($query)):
+                ?>
+                  <b><a href=""><i class="fa fa-<?= $row['social_fa_class']; ?>"></i></a></b>
+                <?php endwhile; ?>
+                </li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
@@ -228,7 +234,8 @@ getHeader();
     $query = mysqli_query($dbconnect, $select);
     while($row = mysqli_fetch_array($query)):
   ?>
-  <li><a href="<?= $row['social_link']; ?>" class="twitter"><i class="fa fa-<?= $row['social_fa_class']; ?>"></i></a></li>
+  <li><a href="<?= $row['social_link']; ?>" class="twitter"><i class="fa fa-<?= $row['social_fa_class']; ?>"></i></a>
+  </li>
 <?php endwhile; ?>
 </ul>   
 <!-- /Social Nav-->

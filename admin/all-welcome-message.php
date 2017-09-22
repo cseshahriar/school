@@ -10,10 +10,10 @@
     <div class="panel panel-primary">
         <div class="panel-heading">
             <div class="col-md-9 heading_title">
-                  All Sliders
+                  All Welcome Massage
              </div>
              <div class="col-md-3 text-right">
-                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Slider</a>
+                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Welcome Massage</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -22,33 +22,33 @@
               <thead class="table_head">
                 <tr>
                     <th>Title</th>
-                    <th>Description</th>
-                    <th>Button Text</th>
-                    <th class="hidden-xs">Button Url</th>
+                    <th>Subtitle</th>
+                    <th>Details</th>
+                    <th class="hidden-xs">Date</th>
                     <th class="hidden-xs">Image</th>
                     <th>Manage</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "SELECT * FROM sliders";
+                  $query = "SELECT * FROM posts WHERE post_cat_id='1' ";
                   $sqlQuery = mysqli_query($dbconnect, $query);
                   while($row = mysqli_fetch_array($sqlQuery)) : ?>
                   <tr>
-                      <td><?= substr($row['slide_title'], 0,15); ?>...</td>
-                      <td><?= substr($row['slide_description'], 0,20); ?>...</td>
-                      <td><?= $row['slide_btn_text']; ?></td>
-                      <td class="hidden-xs"><?= $row['slide_btn_url']; ?></td>
+                      <td><?= substr($row['post_title'], 0,15); ?>...</td>
+                      <td><?= substr($row['post_subtitle'], 0,20); ?>...</td>
+                      <td><?= substr($row['post_details'],0, 25); ?> ...</td>
+                      <td><?= $row['post_date']; ?> ...</td>
                       <td class="hidden-xs">
                         <?php 
-                          if($row['slide_image'] == '') : ?>
+                          if($row['post_image'] == '') : ?>
                             <img src="uploads/noimagefound.jpg" width="200" height="100" alt="">
                           <?php else: ?>
-                            <img src="uploads/<?= $row['slide_image']; ?>" width="200" alt="">
+                            <img src="uploads/<?= $row['post_image']; ?>" width="200" alt="">
                           <?php endif; ?>
                       </td>
                       <td>
-                          <a href="edit-slider.php?sliderId=<?= $row['slide_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="edit-welcome.php?post_id=<?= $row['post_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
                       </td>
                   </tr>
                 <?php endwhile; ?>

@@ -95,17 +95,7 @@
 </section>
 <!-- jquery msg hide -->
 <script src="js/vendor/jquery-1.12.0.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#massages").show();
-      setTimeout(function() {
-       $("#massages").hide(); 
-      }, 5000);
-    });
-  </script>
-<?php  
-  getPhotoSlider();
-?>
+<script src="js/autohide.js"></script>
 <!-- footer   -->
 <footer>
  <div class="container">
