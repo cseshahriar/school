@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once('config.php'); 
 function getHeader(){
 	require_once('includes/header.php');
 }
@@ -16,5 +16,5 @@ function getBreadcrumb(){
 	include_once('includes/breadcrumb.php');
 }
 function getFooter(){
-	require_once('includes/footer.php');
+	require_once('footer.php');
 }

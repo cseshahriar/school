@@ -715,7 +715,11 @@ footer .footer-details ul li b a:hover{
   outline:0;
   background-color: #5763e9;
 }
-.model-0 .twitter {
+.model-0 li a{
+   background-color:rgba(7,7,7,0.6);
+   margin-bottom:1px;
+}
+.model-0  .twitter {
   background-color:rgba(7,7,7,0.6);
   margin-bottom:1px;
 }
@@ -742,19 +746,16 @@ background-color:rgba(7,7,7,0.6);
     padding: 0;
     outline: 0;
 }
-
 .indicator ul li{ 
     display: block;
     float: left;
     line-height: 30px;
 }
-
 .indicator ul li a{
     font-family:OpenSans-Regular;
     color: #636363;
     margin-right: 10px;
     font-size: 14px;
-    
 }
 .about-banner {
     height: 266px;
@@ -772,7 +773,6 @@ background-color:rgba(7,7,7,0.6);
     background-size: cover;
     color: #fff;
 }
-
 .about-opacity h2{
     color: #fff;
     padding-top: 7%;
@@ -782,30 +782,23 @@ background-color:rgba(7,7,7,0.6);
      font-family:PlayfairDisplay-Regular;
     text-align: center;
 }
-
 .about-opacity p{
     color: #fff;
     font-size: 18px;
      font-family:PlayfairDisplay-Regular;
     text-align: center;
 }
-
 .widget-education{
     padding-top: 30px;
 }
-
-
 .widget-education ul{
     margin: 0;
     padding: 0;
     outline: 0;
 }
-
 .widget-education ul li{
     display: block;
-    
 }
-
 .widget-education ul li a{
     display: block;
     font-family:OpenSans-Regular;
@@ -898,4 +891,12 @@ article h6{
      transition: all 0.5s;
     border:1px solid #7f234b;
 }
-
+@media screen and (min-width: 768px){
+  bootstrap.min.css:5
+  .carousel-indicators {
+      bottom: 10px !important;
+  }
+}
+.slider-main .carousel-caption h3 {
+    font-size: 36px !important;
+}

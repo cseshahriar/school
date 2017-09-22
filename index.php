@@ -14,20 +14,18 @@ getHeader();
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
     <?php
-      $query = "SELECT * FROM sliders ORDER BY slide_id DESC LIMIT 0, 3";
+      $query = "SELECT * FROM sliders";
       $sqlQuery = mysqli_query($dbconnect, $query);
       while($row = mysqli_fetch_array($sqlQuery)) : ?>
-      <div class="item <?php if($row['active_slider'] == 1){echo 'active';} ?>">
+      <div class="item <?php if($row['active_slider']==1){echo "active";} ?>">
         <img data-animation="animated pulse" src="admin/uploads/<?= $row['slide_image']; ?>" alt="">
         <div class="carousel-caption text-center">
           <h3 data-animation="animated bounceInLeft"><?= $row['slide_title']; ?></h3>
-          <p data-animation="animated bounceInRight"></p>
           <p data-animation="animated bounceInRight"><?= $row['slide_description']; ?></p>
-          <a data-animation="animated flipInX" href="<?= $row['slide_btn_url']; ?>">Read More</a>
+          <a data-animation="animated flipInX" href="#">Read More</a>
         </div>
       </div>
     <?php endwhile; ?>
-
     </div>
     <!-- Controls -->
     <a class="left left-control" href="#" role="button" data-slide="prev">
@@ -163,5 +161,83 @@ getHeader();
 </section>   
 <?php  
   getPhotoSlider();
-  getFooter();
 ?>
+<!-- footer   -->
+<footer>
+ <div class="container">
+   <div class="col-sm-3">
+      <?php 
+        $select = "SELECT * FROM footer_info WHERE finfo_cat_id='1' ";
+        $query = mysqli_query($dbconnect, $select);
+        $row = mysqli_fetch_array($query);
+      ?>
+       <div class="footer-details">
+           <h2><?= $row['finfo_title']; ?></h2>
+           <ul>
+               <li><?= $row['finfo_address_one']; ?></li>
+               <li><?= $row['finfo_address_two']; ?></li>
+               <li><?= $row['finfo_address_three']; ?></li>
+               <li>
+                   <?= $row['finfo_address_four']; ?>
+               </li>
+           </ul>
+       </div>
+   </div><!--col-sm-3 end-->
+   <!-- campus address  -->
+<!-- campus address  -->
+    <?php 
+        $select = "SELECT * FROM footer_info WHERE finfo_cat_id='2' LIMIT 0,2; ";
+        $query = mysqli_query($dbconnect, $select);
+        while($crow = mysqli_fetch_array($query)) :
+      ?>
+   <div class="col-sm-3">
+       <div class="footer-details">
+           <h2><?= $row['finfo_title']; ?></h2>
+           <ul>
+               <li><?= $row['finfo_address_one']; ?></li>
+               <li><?= $row['finfo_address_two']; ?></li>
+               <li><?= $row['finfo_address_three']; ?></li>
+           </ul>
+       </div>
+   </div><!--col-sm-3 end-->
+  <?php endwhile; ?>
+<!-- /campus address  -->
+   <div class="col-sm-3">
+       <div class="footer-details">
+      <?php 
+        $select = "SELECT * FROM footer_info WHERE finfo_cat_id='3' ";
+        $query = mysqli_query($dbconnect, $select);
+        while($row = mysqli_fetch_array($query)):
+      ?>
+           <h2><?= $row['finfo_title']; ?></h2>
+           <ul>
+               <li style="padding-bottom: 0px;"><a href=""><img class="img-responsive" src="admin/uploads/<?= $row['finfo_image']; ?>" alt=""></a></li>
+               <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+           </ul>
+         <?php endwhile; ?>
+       </div>
+   </div><!--col-sm-3 end-->
+ </div>  
+ <div class="back_to_top"><img src="img/target.png" alt="target"></div>
+</footer> 
+<!-- /footer -->
+<!-- Social Nav -->
+<ul class="social-nav model-0">
+  <?php 
+    $select = "SELECT * FROM social";
+    $query = mysqli_query($dbconnect, $select);
+    while($row = mysqli_fetch_array($query)):
+  ?>
+  <li><a href="<?= $row['social_link']; ?>" class="twitter"><i class="fa fa-<?= $row['social_fa_class']; ?>"></i></a></li>
+<?php endwhile; ?>
+</ul>   
+<!-- /Social Nav-->
+  <!-- Add your site or application content here -->
+  <script src="js/vendor/jquery-1.12.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.enllax.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

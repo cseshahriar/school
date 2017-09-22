@@ -1,7 +1,4 @@
 <!-- slider -->
-<?php 
-  require_once('config.php');
- ?>
 <section class="slider-main">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
