@@ -179,11 +179,11 @@ getHeader();
                <li><?= $row['finfo_address_three']; ?></li>
                 <li>
                 <?php 
-                  $select = "SELECT * FROM social";
-                  $query = mysqli_query($dbconnect, $select);
-                  while($row = mysqli_fetch_array($query)):
+                  $social = "SELECT * FROM social";
+                  $squery = mysqli_query($dbconnect, $social);
+                  while($srow = mysqli_fetch_array($squery)):
                 ?>
-                  <b><a href=""><i class="fa fa-<?= $row['social_fa_class']; ?>"></i></a></b>
+                  <b><a href=""><i class="fa fa-<?= $srow['social_fa_class']; ?>"></i></a></b>
                 <?php endwhile; ?>
                 </li>
            </ul>
