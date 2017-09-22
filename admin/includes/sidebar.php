@@ -1,9 +1,15 @@
-
+<?php include_once('config.php'); ?>
 <div class="container-fluid content_full"> 
     <div class="row">
         <div class="col-md-2 sidebar pd0">
             <div class="side_user">
-                <img class="img-responsive" src="uploads/<?= $_SESSION['photo']; ?>"/>
+                <?php 
+                     $id = $_SESSION['userid'];
+                     $select ="SELECT * FROM tbl_user WHERE id='$id' ";
+                     $query = mysqli_query($dbconnect, $select);
+                     $row = mysqli_fetch_array($query);
+                ?>
+                <img class="img-responsive" src="uploads/<?= $row['image']; ?>"/>
                 <h4><?php echo $_SESSION['name']; ?></h4>
                 <span><i class="fa fa-circle"></i>  Online</span>
             </div>
