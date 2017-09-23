@@ -30,6 +30,7 @@
                 <li><a href="academic-content.php"><i class="fa fa-file-text-o"></i>Academic</a></li>
                 <li><a href="admission-content.php"><i class="fa fa-file-text-o"></i>Admission</a></li>
                 <li><a href="about-content.php"><i class="fa fa-file-text-o"></i>About</a></li>
+                <li><a href="curriculam-content.php"><i class="fa fa-file-text-o"></i>Curiculam</a></li>
                 <?php } ?>
                 <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
