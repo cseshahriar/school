@@ -21,6 +21,7 @@
                 <?php } ?>
                 <?php if($_SESSION['role'] <= 2){ ?>
                 <li><a href="all-sliders.php"><i class="fa fa-sliders"></i> Sliders</a></li>
+                <li><a href="all-banner.php"><i class="fa fa-image"></i> Banners</a></li>
                 <li><a href="welcome-messages.php"><i class="fa fa-comment-o"></i> Welcome</a></li>
                 <li><a href="latest-news.php"><i class="fa fa-comment-o"></i>Latest News</a></li>
                 <li><a href="announcements.php"><i class="fa fa-bullhorn"></i>Announcement</a></li>
