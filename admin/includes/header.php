@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css"/>
     <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/sidebar.css"/>
   </head>
   <body>
   	<div class="container-fluid header_full">
