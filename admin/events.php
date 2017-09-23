@@ -3,17 +3,17 @@
   needLogIn();
   if($_SESSION['role'] <=1){ 
 	getAdminHeader();
-  getAdminSidebar();
+  getAdminSidebar(); 
   getBreadcrum();
 ?>
 <div class="col-md-12">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <div class="col-md-9 heading_title">
-                  Latest News
+                  Upcomming Events
              </div>
              <div class="col-md-3 text-right">
-                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Latest News</a>
+                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Upcomming Event</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -21,34 +21,30 @@
           <table class="table table-responsive table-striped table-hover table_cus">
               <thead class="table_head">
                 <tr>
-                    <th>Title</th>
-                    <th>Subtitle</th>
                     <th>Details</th>
-                    <th class="hidden-xs">Date</th>
                     <th class="hidden-xs">Image</th>
+                    <th class="hidden-xs">Date</th>
                     <th>Manage</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "SELECT * FROM news WHERE news_cat_id='1' ";
+                  $query = "SELECT * FROM news WHERE news_cat_id='3' ";
                   $sqlQuery = mysqli_query($dbconnect, $query);
                   while($row = mysqli_fetch_array($sqlQuery)) : ?>
                   <tr>
-                      <td><?= substr($row['news_title'], 0,15); ?>...</td>
-                      <td><?= substr($row['news_subtitle'], 0,20); ?>...</td>
                       <td><?= substr($row['news_details'],0, 45); ?> ...</td>
-                      <td><?= $row['news_date']; ?> ...</td>
                       <td class="hidden-xs">
                         <?php 
                           if($row['news_image'] == '') : ?>
-                            <img src="uploads/noimagefound.jpg" height="100" alt="">
+                            <img src="uploads/noimagefound.jpg" height="80" alt="">
                           <?php else: ?>
                             <img src="uploads/<?= $row['news_image']; ?>" height="80" alt="">
                           <?php endif; ?>
                       </td>
+                      <td><?= $row['news_date']; ?> ...</td>
                       <td>
-                          <a href="edit-latest-news.php?news_id=<?= $row['news_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="edit-event.php?enews_id=<?= $row['news_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
                       </td>
                   </tr>
                 <?php endwhile; ?>

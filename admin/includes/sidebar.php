@@ -23,6 +23,8 @@
                 <li><a href="all-sliders.php"><i class="fa fa-sliders"></i> Sliders</a></li>
                 <li><a href="welcome-messages.php"><i class="fa fa-comment-o"></i> Welcome</a></li>
                 <li><a href="latest-news.php"><i class="fa fa-comment-o"></i>Latest News</a></li>
+                <li><a href="announcements.php"><i class="fa fa-bullhorn"></i>Announcement</a></li>
+                <li><a href="events.php"><i class="fa fa-calendar"></i>Events</a></li>
                 <li><a href="#"><i class="fa fa-image"></i> Gallery</a></li>
                 <?php } ?>
                 <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
