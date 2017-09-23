@@ -183,7 +183,7 @@ getHeader();
                   $squery = mysqli_query($dbconnect, $social);
                   while($srow = mysqli_fetch_array($squery)):
                 ?>
-                  <b><a href=""><i class="fa fa-<?= $srow['social_fa_class']; ?>"></i></a></b>
+                  <b><a href="<?= $srow['social_link']; ?>"><i class="fa fa-<?= $srow['social_fa_class']; ?>"></i></a></b>
                 <?php endwhile; ?>
                 </li>
            </ul>

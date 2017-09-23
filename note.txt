@@ -1,5 +1,11 @@
 # database relation :  ALTER TABLE tbl_user ADD FOREIGN KEY(role_id) REFERENCES tbl_user_role(role_id);
-# long text can't update but small text update
-# view and update page content 
-# insert korte hoby : slider, latest news, announce, upcomming event, sofial icon, photo slider,edit / change banner
+
+# long text can't update but small text update - problem
+
+# view and update page content - done
+
+# insert korte hoby : slider, latest news, announce, upcomming event, sofial icon, photo slider,edit / change banner - 
+
 # contact form validation
+
+# updae footer info-
