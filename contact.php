@@ -8,7 +8,7 @@
     $subject =testUserInput($_POST['subject']);
     $massage = testUserInput($_POST['massage']);
     if(!empty($name && $email && $subject && $massage)){
-      $select = "INSERT INTO comments(comment_name, comment_email, comment_subject, message)
+      $select = "INSERT INTO comments(comment_name, comment_email, comment_subject, massage)
       VALUES('$name', ' $email', '$subject', '$massage')";
       $query = mysqli_query($dbconnect, $select);
       if($query){

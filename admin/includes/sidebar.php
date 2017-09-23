@@ -20,6 +20,7 @@
                     <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
                 <?php } ?>
                 <?php if($_SESSION['role'] <= 2){ ?>
+                <li><a href="all-comments.php"><i class="fa fa-comment-o"></i>Comments</a></li>
                 <li><a href="all-sliders.php"><i class="fa fa-sliders"></i>Sliders</a></li>
                 <li><a href="all-banner.php"><i class="fa fa-image"></i>Banners</a></li>
                 <li><a href="welcome-messages.php"><i class="fa fa-comment-o"></i> Welcome</a></li>
