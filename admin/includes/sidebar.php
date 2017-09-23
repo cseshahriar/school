@@ -13,11 +13,13 @@
                 <h4><?php echo $_SESSION['name']; ?></h4>
                 <span><i class="fa fa-circle"></i>  Online</span>
             </div>
-            <h2>MAIN NAVIGATION</h2> 
+         <!--    <h2>MAIN NAVIGATION</h2>  -->
             <ul>
-                <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="index.php"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                 <?php if($_SESSION['role'] <= 1){?>
-                    <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
+                    <li><a href="all-user.php"><i class="fa fa-user-circle"></i>User</a></li>
+                    <li><a href="all-sliders.php"><i class="fa fa-sliders"></i>Main Slider</a></li>
+                    <li><a href="all-banner.php"><i class="fa fa-image"></i>Banners</a></li>
                     <!-- page content -->
                     <li  data-toggle="collapse" data-target="#products" class="collapsed active">
                       <a href="#"><i class="fa fa-file-text-o"></i> Page Content <i class="fa fa-angle-down"></i> </span></a>
@@ -32,7 +34,7 @@
                     <!-- / page content -->
                     <!-- nesw -->
                     <li  data-toggle="collapse" data-target="#news" class="collapsed active">
-                      <a href="#"><i class="fa fa-file-text-o"></i>News <i class="fa fa-angle-down"></i> </span></a>
+                      <a href="#"><i class="fa fa-file-text-o"></i> News <i class="fa fa-angle-down"></i> </span></a>
                     </li>
                     <ul class="sub-menu collapse" id="news">
                         <li class="active"><a href="latest-news.php"><i class="fa fa-comment-o"></i>Latest News</a></li>
@@ -42,11 +44,9 @@
                     <!-- /nesw -->
                 <?php } ?>
                 <?php if($_SESSION['role'] <= 2){ ?>
+                <li><a href="#"><i class="fa fa-image"></i>Gallery</a></li>
                 <li><a href="all-comments.php"><i class="fa fa-comment-o"></i>Comments</a></li>
-                <li><a href="all-sliders.php"><i class="fa fa-sliders"></i>Sliders</a></li>
-                <li><a href="all-banner.php"><i class="fa fa-image"></i>Banners</a></li>
-                <li><a href="#"><i class="fa fa-image"></i> Gallery</a></li>
                 <?php } ?>
-                <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out"></i>Logout</a></li>
             </ul>
         </div><!--sidebar end-->

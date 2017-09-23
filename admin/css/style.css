@@ -190,3 +190,22 @@ body{
 	.userPhoto{
 		width: 100px;
 	}
+	/* dashboard */
+.quick-btn {
+	border-radius: 260px;
+	display: block;
+	height: 140px;
+	line-height: 30px;
+	margin-bottom: 15px;
+	margin-right: 15px;
+	padding-top: 30px;
+	text-align: center;
+	width: 140px;
+	font-size: 14px;
+}
+.panel-body{
+		padding: 15px;
+	}
+.container-fluid.footer_full {
+	background:transparent;
+}
