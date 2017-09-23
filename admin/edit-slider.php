@@ -1,5 +1,5 @@
 <?php
-    require_once('functions/admin-functions.php');
+    require_once('functions/admin-functions.php'); 
     needLogIn();
     getAdminHeader();
     getAdminSidebar();

@@ -1,5 +1,5 @@
 <?php include_once('config.php'); ?>
-<div class="container-fluid content_full"> 
+<div class="container-fluid content_full">  
     <div class="row">
         <div class="col-md-2 sidebar pd0">
             <div class="side_user">
@@ -20,13 +20,16 @@
                     <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
                 <?php } ?>
                 <?php if($_SESSION['role'] <= 2){ ?>
-                <li><a href="all-sliders.php"><i class="fa fa-sliders"></i> Sliders</a></li>
-                <li><a href="all-banner.php"><i class="fa fa-image"></i> Banners</a></li>
+                <li><a href="all-sliders.php"><i class="fa fa-sliders"></i>Sliders</a></li>
+                <li><a href="all-banner.php"><i class="fa fa-image"></i>Banners</a></li>
                 <li><a href="welcome-messages.php"><i class="fa fa-comment-o"></i> Welcome</a></li>
                 <li><a href="latest-news.php"><i class="fa fa-comment-o"></i>Latest News</a></li>
                 <li><a href="announcements.php"><i class="fa fa-bullhorn"></i>Announcement</a></li>
                 <li><a href="events.php"><i class="fa fa-calendar"></i>Events</a></li>
                 <li><a href="#"><i class="fa fa-image"></i> Gallery</a></li>
+                <li><a href="academic-content.php"><i class="fa fa-file-text-o"></i>Academic</a></li>
+                <li><a href="admission-content.php"><i class="fa fa-file-text-o"></i>Admission</a></li>
+                <li><a href="about-content.php"><i class="fa fa-file-text-o"></i>About</a></li>
                 <?php } ?>
                 <li><a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
