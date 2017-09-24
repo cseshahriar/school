@@ -3,7 +3,7 @@
   getHeader(); ?>
 <!-- banner -->
 <?php 
-  $select = "SELECT * FROM banner WHERE banner_cat_id='1' ";
+  $select = "SELECT * FROM banners WHERE banner_cat_id='1' ";
   $query = mysqli_query($dbconnect, $select);
   $row = mysqli_fetch_array($query) ?>
 <section class="academic-banner" style="background-image: url(admin/uploads/<?= $row['banner_image']; ?>);">

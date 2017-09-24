@@ -13,7 +13,7 @@
       <div class="clearfix"></div>  
       <div class="footer-slick">
       <?php 
-          $select = "SELECT * FROM photo_slider";
+          $select = "SELECT * FROM gallery";
           $query = mysqli_query($dbconnect, $select);
           while($pslider = mysqli_fetch_array($query)) : ?>
           <div class="col-sm-4"><!--col-sm-4 start-->
