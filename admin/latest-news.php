@@ -13,7 +13,7 @@
                   Latest News
              </div>
              <div class="col-md-3 text-right">
-                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Latest News</a>
+                <a href="add-lnews.php" class="btn btn-sm btn btn-primary"><i class="fa fa-plus-circle"></i> Add Latest News</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -49,6 +49,7 @@
                       </td>
                       <td>
                           <a href="edit-latest-news.php?news_id=<?= $row['news_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="delete-latest-news.php?news_id=<?= $row['news_id']; ?>"><i class="fa fa-trash fa-lg"></i></a>
                       </td>
                   </tr>
                 <?php endwhile; ?>

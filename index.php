@@ -7,9 +7,15 @@ getHeader();
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <?php 
+        $sr = 1;
+        $select = "SELECT * FROM sliders";
+        $query = mysqli_query($dbconnect, $select);
+        while($row = mysqli_fetch_array($query)) { 
+          $id = $row['slide_id']; ?>
+          <li data-target="#carousel-example-generic" data-slide-to="<?= $sr++; ?>" class="<?php if($row['slide_id'] == $id){echo 'active';} ?>"></li>
+        <?php }
+       ?>
     </ol>
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">

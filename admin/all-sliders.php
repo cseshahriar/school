@@ -13,7 +13,7 @@
                   All Sliders
              </div>
              <div class="col-md-3 text-right">
-                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Slider</a>
+                <a href="add-slider.php" class="btn btn-sm btn btn-primary"><i class="fa fa-plus-circle"></i> Add Slider</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -49,6 +49,7 @@
                       </td>
                       <td>
                           <a href="edit-slider.php?sliderId=<?= $row['slide_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="delete-slide.php?slide_id=<?= $row['slide_id']; ?>"><i class="fa fa-trash fa-lg"></i></a>
                       </td>
                   </tr>
                 <?php endwhile; ?>
