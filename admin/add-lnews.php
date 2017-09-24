@@ -85,7 +85,7 @@
           <div class="form-group">
             <label for="" class="col-sm-3 control-label">Date</label>
             <div class="col-sm-8">
-              <input type="text" name="lnews_date" id="datepicker" />
+              <input type="date" name="lnews_date" id="datepicker" />
             </div>
           </div>
       </div>
