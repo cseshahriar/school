@@ -13,7 +13,7 @@
                   Upcomming Events
              </div>
              <div class="col-md-3 text-right">
-                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Upcomming Event</a>
+                <a href="add-event.php" class="btn btn-sm btn btn-primary"><i class="fa fa-plus-circle"></i> Add Upcomming Event</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -45,6 +45,7 @@
                       <td><?= $row['news_date']; ?> ...</td>
                       <td>
                           <a href="edit-event.php?enews_id=<?= $row['news_id']; ?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="delete-event.php?enews_id=<?= $row['news_id']; ?>"><i class="fa fa-trash fa-lg"></i></a>
                       </td>
                   </tr>
                 <?php endwhile; ?>
