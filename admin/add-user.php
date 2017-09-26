@@ -1,17 +1,17 @@
 <?php
     require_once('functions/admin-functions.php');
     needLogIn();
-    if($_SESSION['role'] <= 1) {
+    if($_SESSION['role'] <= 2) { 
     getAdminHeader();
     getAdminSidebar();
     getBreadcrum();
     //insert logic
     if(isset($_POST['insert'])){
-      $Name = input_filter($_POST['name']);
-      $Email = input_filter($_POST['email']);
-      $Phone = input_filter($_POST['phone']);
-      $Username = input_filter($_POST['username']);
-      $Password = input_filter(md5($_POST['password']));
+      $Name = $_POST['name'];
+      $Email = $_POST['email'];
+      $Phone = $_POST['phone'];
+      $Username = $_POST['username'];
+      $Password = md5($_POST['password']); 
       $Role = $_POST['role'];
       $img = $_FILES['img'];
       $imgName = "User-".time()."-".rand(1000, 10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
@@ -23,20 +23,13 @@
         if($insertQuery){
           move_uploaded_file($img['tmp_name'], 'uploads/'.$imgName);
           $msg = '<span id="message">Insertion Successfuly</span>';
-          header('Location: all-user.php'); //redirect
+          header("Location: all-user.php"); //redirect
         }else{
           $msg = '<span id="message">Insertion Failed!</span>';
         }
       }else{
         $msg = '<span id="message">Pleas enter your name, email, username, password and role id!</span>';
       }
-    }
-    //data filtering function
-    function input_filter($data){
-      $data = trim($data);
-      $data = htmlentities($data, ENT_QUOTES);
-      $data = htmlspecialchars($data);
-      return $data;
     }
 ?>
 <div class="col-md-12">

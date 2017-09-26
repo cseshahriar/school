@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2017 at 08:11 AM
+-- Generation Time: Sep 26, 2017 at 09:17 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -362,8 +362,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `name`, `phone`, `email`, `username`, `password`, `role_id`, `image`) VALUES
-(1, 'shahriar', '01710835653', 'shahriarcse@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'User-1505827153-8174621.png'),
-(2, 'shahriar', '01710835653', 'hosen.shahriar.cse@gmail.com', 'shahriarcse', 'd41d8cd98f00b204e9800998ecf8427e', 1, 'User-1506088517-8521266.png');
+(1, 'Admin', '01710835653', 'hosen.shahriar.cse@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 2, 'User-1506409606-1822107.png'),
+(3, 'Md. Shahriar Hosen', '01710835653', 'hosen.shahriar.cse@gmail.com', 'shahriarcse', '3974a091dc68cf81999741ce1ab92bf3', 1, 'User-1506409700-4535459.png');
 
 -- --------------------------------------------------------
 
@@ -559,7 +559,7 @@ ALTER TABLE `social`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbl_user_role`
 --

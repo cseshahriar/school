@@ -1,7 +1,6 @@
-<?php
-    require_once('functions/admin-functions.php');
+<?php require_once('functions/admin-functions.php');
     needLogIn();
-    getAdminHeader();
+    getAdminHeader(); 
     getAdminSidebar();
     getBreadcrum();
     //set value
@@ -11,8 +10,8 @@
       $Name = input_filter($_POST['name']);
       $Phone = input_filter($_POST['phone']);
       $Email = input_filter($_POST['email']);
-      $Username = input_filter($_POST['username']);
-      $Password = input_filter(md5($_POST['password']));
+      //$Username = input_filter($_POST['username']);
+      $Password = md5($_POST['password']);
       $Role = input_filter($_POST['role']);
       $img = $_FILES['img'];
       $imgName = "User-".time()."-".rand(1000,10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
@@ -28,7 +27,6 @@
         }else{
           $msg = '<span id="message">Update Failed!</span>';
         }
-
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
@@ -97,6 +95,12 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-8">
+              <input type="password" class="form-control" name="password"/>
+            </div>
+          </div>
+          <div class="form-group">
             <label for="" class="col-sm-3 control-label">User Role</label>
             <div class="col-sm-4">
               <select class="form-control select_cus" name="role">
@@ -104,7 +108,7 @@
                   $roleQuery = "SELECT * FROM tbl_user_role";
                   $roleSqlQuery = mysqli_query($dbconnect, $roleQuery);
                   while($role = mysqli_fetch_array($roleSqlQuery)) : ?>
-                  <option value="<?= $row['role_id']; ?>" <?php if($row['role_id'] == $role['role_id'] ){echo "selected" ;}?> > <?= $role['role_name']; ?> </option>
+                  <option value="<?= $role['role_id']; ?>" <?php if($row['role_id'] == $role['role_id'] ){echo "selected" ;}?> > <?= $role['role_name']; ?> </option>
                 <?php endwhile; ?>
               </select>
             </div>
@@ -127,6 +131,4 @@
     </div>
     </form>
 </div><!--col-md-12 end-->
-<?php
-   getAdminFooter();
-?>
+<?php getAdminFooter();?>

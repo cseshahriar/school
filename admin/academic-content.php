@@ -1,7 +1,7 @@
 <?php
 	require_once('functions/admin-functions.php');
   needLogIn();
-  if($_SESSION['role'] <=1){ 
+  if($_SESSION['role'] <=2){ 
 	getAdminHeader();
   getAdminSidebar(); 
   getBreadcrum();
