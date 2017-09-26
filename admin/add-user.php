@@ -7,13 +7,12 @@
     getBreadcrum();
     //insert logic
     if(isset($_POST['insert'])){
-      $Name = $_POST['name'];
-      $Email = $_POST['email'];
-      $Phone = $_POST['phone'];
-      $Username = $_POST['username'];
-      $Password = md5($_POST['password']);
+      $Name = input_filter($_POST['name']);
+      $Email = input_filter($_POST['email']);
+      $Phone = input_filter($_POST['phone']);
+      $Username = input_filter($_POST['username']);
+      $Password = input_filter(md5($_POST['password']));
       $Role = $_POST['role'];
-
       $img = $_FILES['img'];
       $imgName = "User-".time()."-".rand(1000, 10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
       //img name.path
@@ -31,6 +30,13 @@
       }else{
         $msg = '<span id="message">Pleas enter your name, email, username, password and role id!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <div class="col-md-12">

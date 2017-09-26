@@ -12,13 +12,13 @@
     $lnews = mysqli_fetch_array($query);
     //for update
     if(!empty($_POST)){
-      $title = $_POST['title'];
-      $sub_title = $_POST['sub_title'];
-      $details = $_POST['details'];
-      $btn_txt = $_POST['btn_txt'];
-      $btn_url = $_POST['btn_url'];
+      $title = input_filter($_POST['title']);
+      $sub_title = input_filter($_POST['sub_title']);
+      $details = input_filter($_POST['details']);
+      $btn_txt = input_filter($_POST['btn_txt']);
+      $btn_url = input_filter($_POST['btn_url']);
       $image = $_FILES['news_image'];
-      $imageName = "Latest News-".time()."-".rand(1000,100000).".".pathinfo($image['name'], PATHINFO_EXTENSION);
+      $imageName = "Latest-news-".time()."-".rand(1000,100000).".".pathinfo($image['name'], PATHINFO_EXTENSION);
 
       if(!empty($title && $details && $image)){
         $select = "UPDATE news SET news_title='$title', news_subtitle='$sub_title', news_details='$details', news_btn_text='$btn_txt', news_btn_url='$btn_url', news_image='$imageName' WHERE news_id='$id' ";
@@ -33,6 +33,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

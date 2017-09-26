@@ -13,7 +13,7 @@
 
     //for update
     if(!empty($_POST)){
-      $details = $_POST['details'];
+      $details = input_filter($_POST['details']);
       if(!empty($details)){
         $select = "UPDATE news SET news_details='$details' WHERE news_id='$id' ";
         $query = mysqli_query($dbconnect, $select);
@@ -27,6 +27,14 @@
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
     }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
 ?>
 <style>
   .edit-photo{

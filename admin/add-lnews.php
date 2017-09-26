@@ -7,11 +7,11 @@
     getBreadcrum();
     //insert logic
     if(!empty($_POST)){
-      $title = $_POST['title'];
-      $subtitle = $_POST['subtitle'];
-      $details = $_POST['details'];
-      $btn_txt = $_POST['btn_txt'];
-      $btn_url = $_POST['btn_url'];
+      $title = input_filter($_POST['title']);
+      $subtitle = input_filter($_POST['subtitle']);
+      $details = input_filter($_POST['details']);
+      $btn_txt = input_filter($_POST['btn_txt']);
+      $btn_url = input_filter($_POST['btn_url']);
       $image = $_FILES['image'];
       $image_name = "latest-news-".time()."-".rand(1000, 1000000).".".pathinfo($image['name'],PATHINFO_EXTENSION);
       $date = $_POST['lnews_date'];
@@ -30,6 +30,13 @@
       }else{
         $msg = '<span id="message">Pleas enter your name, email, username, password and role id!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <div class="col-md-12">

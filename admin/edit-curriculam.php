@@ -12,8 +12,8 @@
     $post = mysqli_fetch_array($query);
     //for update
     if(!empty($_POST)){
-      $title = $_POST['title'];
-      $details = $_POST['details'];
+      $title = input_filter($_POST['title']);
+      $details = input_filter($_POST['details']);
     
       if(!empty($title && $details )){
         $select = "UPDATE posts SET post_title='$title', post_details='$details' WHERE post_id='$id' ";
@@ -27,6 +27,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

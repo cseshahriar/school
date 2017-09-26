@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2017 at 07:23 AM
+-- Generation Time: Sep 26, 2017 at 08:11 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -204,7 +204,6 @@ INSERT INTO `news` (`news_id`, `news_title`, `news_subtitle`, `news_details`, `n
 (1, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'Latest News-1506143756-87653.jpg', '2017-09-18', 1),
 (2, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'sucees-two.jpg', '2017-09-20', 1),
 (3, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'success-three.jpg', '2017-09-20', 1),
-(4, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'success-one.jpg', '2017-09-20', 1),
 (5, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2),
 (6, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2),
 (7, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2),
@@ -213,8 +212,9 @@ INSERT INTO `news` (`news_id`, `news_title`, `news_subtitle`, `news_details`, `n
 (10, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'news-1.jpg', '2017-09-20', 3),
 (11, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'news-1.jpg', '2017-09-20', 3),
 (12, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'news-1.jpg', '2017-09-20', 3),
-(13, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', 'news-1.jpg', '2017-03-20', 3),
-(15, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2);
+(18, ' Student Affairs Unit', 'Student Affairs Unit', 'Enter as much criteria on the left as you wish, or click an area on the map below to begin your search in a particular borough. To find your zoned school, enter your home address below.', 'Read More', '#', 'latest-news-1506271965-327333.jpg', '0000-00-00', 1),
+(23, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest.', '', '', '', '2017-06-06', 2),
+(24, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ... ...', '', '', 'event-news-1506277665-725312.jpg', '2017-09-12', 3);
 
 -- --------------------------------------------------------
 
@@ -259,7 +259,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`post_id`, `post_title`, `post_subtitle`, `post_details`, `post_btn_txt`, `post_btn_url`, `post_date`, `post_image`, `post_cat_id`) VALUES
-(1, 'Welcome to', 'SCHOLASTICA SCHOOL', 'Scholastica was established in 1977 by Mrs. Yasmeen Murshed. It was founded with a mission to provide a balanced and well-rounded education for all our students, using English as the primary medium of instruction but placing equal emphasis on Bangla. Scholastica\'s mission is to build curious, knowledgeable and caring young individuals, who will be equipped to tackle head-on the challenges of our modern-day \"global village\". They will aspire to become responsible citizens, who will embrace and respect people from other cultures and walks of life.', 'Read More', '#', '2017-09-20 11:18:21', '', 1),
+(1, 'Welcome to', 'SCHOLASTICA SCHOOL', 'SCHOLASTICA WAS ESTABLISHED IN 1977 BY MRS. YASMEEN MURSHED. IT WAS FOUNDED WITH A MISSION TO PROVIDE A BALANCED AND WELL-ROUNDED EDUCATION FOR ALL OUR STUDENTS, USING ENGLISH AS THE PRIMARY MEDIUM OF INSTRUCTION BUT PLACING EQUAL EMPHASIS ON BANGLA. SCHOLASTICA&amp;amp;amp;#039;S MISSION IS TO BUILD CURIOUS, KNOWLEDGEABLE AND CARING YOUNG INDIVIDUALS, WHO WILL BE EQUIPPED TO TACKLE HEAD-ON THE CHALLENGES OF OUR MODERN-DAY &amp;amp;amp;quot;GLOBAL VILLAGE&amp;amp;amp;quot;. THEY WILL ASPIRE TO BECOME RESPONSIBLE CITIZENS, WHO WILL EMBRACE AND RESPECT PEOPLE FROM OTHER CULTURES AND WALKS OF LIFE.', 'Read More', '#', '2017-09-20 11:18:21', '', 1),
 (2, 'Academics', '', '<p>Scholastica is one of the largest private English-medium schools in Bangladesh, offering pre-school to A\' Level classes of an international standard. It offers a complete school-leaving course using English as the medium of instruction. We emphasize equal proficiency in Bangla as a necessary prerequisite for a well-rounded education for Bangladeshi students.</p><p>Scholastica\'s curriculum has been designed to reflect the specific needs of Bangladeshi students keeping in mind their heritage, culture and national identity. </p><p>The school has designed a comprehensive curriculum for all classes leading to the University of Cambridge \nInternational Examinations Ordinary and Advanced Level General Certificate of Education courses which are \ntaught in Classes IX to XII. These examinations are administered by the British Council, Dhaka. </p>', '', '', '2017-09-13 00:00:00', 'Latest News-1506150917-59757.jpg', 2),
 (3, 'Admission in Scholastica', '', '<p>The admissions process in Scholastica is very transparent. Anyone is welcome to apply without any reference. Absolutely no donations are accepted; only published fees are required. </p>\n <p>During the admissions process, interviews are held by a panel of senior management, not a single individual. The interview panel is a team of qualified individuals from Scholastica\'s senior management. All decisions for admission are made through a committee, not by any one individual.</p>\n<p>No external agents/agencies are appointed or involved in the admissions process; the Admissions Office is the only point of contact for all admissions-related applications and inquiries. No Ascent Group personnel have a role in the admissions process except those in the Admissions Office and on the interview and selection panel. </p>\n                        \n<p>During the admissions process, interviews are held by a panel of senior management, not a single individual. The interview panel is a team of qualified individuals from Scholastica\'s senior management. All decisions for admission are made through a committee, not by any one individual.</p>', '', '', '2017-09-06 00:00:00', 'Latest News-1506151246-87015.jpg', 3),
 (4, 'Our Curriculum', '', 'Scholastica provides a complete school-leaving course of study, from pre-school to the A\' Levels. We have developed our own curriculum; it aims to deliver a holistic education program combining the core competencies of the national and the British curricula. The comprehensive curriculum designed for the elementary, secondary and high school classes ultimately leads to the University of Cambridge International Examinations Ordinary and Advanced Level General Certificate of Education exams, taught in the high school. These examinations are conducted under the auspices of the British Council, Dhaka.', '', '', '2017-09-11 00:00:00', '', 4),
@@ -529,7 +529,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `news_category`
 --

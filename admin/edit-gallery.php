@@ -12,8 +12,8 @@
     $gallery = mysqli_fetch_array($query);
     //for update
     if(!empty($_POST)){
-      $title = $_POST['title'];
-      $details = $_POST['details'];
+      $title = input_filter($_POST['title']);
+      $details = input_filter($_POST['details']);
       $image = $_FILES['gallery_image'];
       $imageName = "Gallery-".time()."-".rand(1000,100000).".".pathinfo($image['name'], PATHINFO_EXTENSION);
 
@@ -30,6 +30,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

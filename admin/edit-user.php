@@ -8,12 +8,12 @@
     $id = $_REQUEST['editId'];
     //update
     if(isset($_POST['update'])){
-      $Name = $_POST['name'];
-      $Phone = $_POST['phone'];
-      $Email = $_POST['email'];
-      $Username = $_POST['username'];
-      $Password = md5($_POST['password']);
-      $Role = $_POST['role'];
+      $Name = input_filter($_POST['name']);
+      $Phone = input_filter($_POST['phone']);
+      $Email = input_filter($_POST['email']);
+      $Username = input_filter($_POST['username']);
+      $Password = input_filter(md5($_POST['password']));
+      $Role = input_filter($_POST['role']);
       $img = $_FILES['img'];
       $imgName = "User-".time()."-".rand(1000,10000000).".".pathinfo($img['name'],PATHINFO_EXTENSION);
       //img name.path
@@ -32,6 +32,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

@@ -12,7 +12,7 @@
     $lnews = mysqli_fetch_array($query);
     //for update
     if(!empty($_POST)){
-      $details = $_POST['details'];
+      $details = input_filter($_POST['details']);
       $image = $_FILES['news_image'];
       $imageName = "Latest News-".time()."-".rand(1000,100000).".".pathinfo($image['name'], PATHINFO_EXTENSION);
 
@@ -29,6 +29,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

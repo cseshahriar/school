@@ -8,10 +8,10 @@
     $id = $_REQUEST['id'];
     //update
     if(!empty($_POST)){
-      $title = $_POST['title'];
-      $address1 = $_POST['address_one'];
-      $address2 = $_POST['address_two'];
-      $address3 = $_POST['address_three'];
+      $title = input_filter($_POST['title']);
+      $address1 = input_filter($_POST['address_one']);
+      $address2 = input_filter($_POST['address_two']);
+      $address3 = input_filter($_POST['address_three']);
       $image = $_FILES['image'];
       $imageName = "footer-".time()."-".rand(1000,100000).".".pathinfo($image['name'], PATHINFO_EXTENSION);
       //img name.path
@@ -36,6 +36,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

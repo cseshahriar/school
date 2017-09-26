@@ -7,7 +7,7 @@
     getBreadcrum();
     //insert logic
     if(!empty($_POST)){
-      $details = $_POST['details'];
+      $details = input_filter($_POST['details']);
       $image = $_FILES['image'];
       $image_name = "event-news-".time()."-".rand(1000, 1000000).".".pathinfo($image['name'],PATHINFO_EXTENSION);
       $date = $_POST['event_date'];
@@ -26,6 +26,13 @@
       }else{
         $msg = '<span id="message">Pleas enter details , image, date</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <div class="col-md-12">

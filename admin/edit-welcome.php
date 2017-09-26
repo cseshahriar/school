@@ -13,11 +13,11 @@
 
     //for update
     if(!empty($_POST)){
-      $title = $_POST['title'];
-      $sub_title = $_POST['sub_title'];
-      $details = $_POST['details'];
-      $btn_txt = $_POST['btn_txt'];
-      $btn_url = $_POST['btn_url'];
+      $title = input_filter($_POST['title']);
+      $sub_title = input_filter($_POST['sub_title']);
+      $details = input_filter($_POST['details']);
+      $btn_txt = input_filter($_POST['btn_txt']);
+      $btn_url = input_filter($_POST['btn_url']);
 
       if(!empty($title AND $details)){
         $select = "UPDATE posts SET post_title='$title', post_subtitle='$sub_title', post_details='$details', post_btn_txt='$btn_txt', post_btn_url='$btn_url' WHERE post_id='$id' ";
@@ -32,6 +32,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

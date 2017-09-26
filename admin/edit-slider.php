@@ -7,10 +7,10 @@
     //set value
     $id = $_REQUEST['sliderId'];
     if(!empty($_POST)){
-      $title = $_POST['title'];
-      $description = $_POST['description'];
-      $btnText = $_POST['btnText'];
-      $btnUrl = $_POST['btnUrl'];
+      $title = input_filter($_POST['title']);
+      $description =input_filter($_POST['description']);
+      $btnText = input_filter($_POST['btnText']);
+      $btnUrl = input_filter($_POST['btnUrl']);
       $image = $_FILES['slideImg'];
       $imageName = "slide-".time()."-".rand(1000,100000).".".pathinfo($image['name'], PATHINFO_EXTENSION);
       $slideActive = $_POST['active_slider'];
@@ -28,7 +28,13 @@
       }else{
         $msg = '<span id="message">Input Field must not be empty!</span>';
       }
-
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <style>

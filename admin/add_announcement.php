@@ -7,8 +7,8 @@
     getBreadcrum();
     //insert logic
     if(!empty($_POST)){
-      $details = $_POST['details'];
-      $date = $_POST['annoucement_date'];
+      $details = input_filter($_POST['details']);
+      $date = input_filter($_POST['annoucement_date']);
       //img name.path
       if(!empty($details && $date)){
         $insert = "INSERT INTO news(news_details, news_date, news_cat_id) VALUES('$details', '$date', '2')";
@@ -22,6 +22,13 @@
       }else{
         $msg = '<span id="message">Pleas enter details and Date</span>';
       }
+    }
+    //data filtering function
+    function input_filter($data){
+      $data = trim($data);
+      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlspecialchars($data);
+      return $data;
     }
 ?>
 <div class="col-md-12">
