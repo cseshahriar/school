@@ -34,7 +34,7 @@
   //data filtering function
     function input_filter($data){
       $data = trim($data);
-      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlentities($data,ENT_QUOTES);
       $data = htmlspecialchars($data);
       return $data;
     }
