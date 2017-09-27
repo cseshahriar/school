@@ -7,13 +7,14 @@
     getBreadcrum();
     //insert logic
     if(!empty($_POST)){
-      $title =input_filter($_POST['title']);
-      $subtitle = input_filter($_POST['subtitle']);
-      $details = input_filter($_POST['details']);
-      $btn_txt = input_filter($_POST['btn_txt']);
-      $btn_url = input_filter($_POST['btn_url']);
+      $title = $_POST['title'];
+      $subtitle = $_POST['subtitle'];
+      $details = $_POST['details'];
+      $btn_txt = $_POST['btn_txt'];
+      $btn_url = $_POST['btn_url'];
       $image = $_FILES['image'];
       $image_name = "Slider-".time()."-".rand(1000, 1000000).".".pathinfo($image['name'],PATHINFO_EXTENSION);
+
       //img name.path
       if(!empty($title && $details && $image)){
         $insert = "INSERT INTO sliders(slide_title, slide_subtitle, slide_description, slide_btn_text, slide_btn_url, slide_image) VALUES(' $title','$subtitle','$details','$btn_txt','$btn_url','$image_name')";
@@ -29,10 +30,10 @@
         $msg = '<span id="message">Pleas enter your name, email, username, password and role id!</span>';
       }
     }
-     //data filtering function
-    function input_filter($data){
+    //data filtering function
+    function input_filters($data){
       $data = trim($data);
-      $data = htmlentities($data, ENT_QUOTES);
+      $data = htmlentities($data, ENT_QUOTES); 
       $data = htmlspecialchars($data);
       return $data;
     }

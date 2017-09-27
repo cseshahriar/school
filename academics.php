@@ -48,7 +48,7 @@
               <article>
                 <h1><?php echo $row['post_title']; ?></h1>
                 <p><img src="admin/uploads/<?= $row['post_image']; ?>" class="img-responsive" alt="about image"></p>
-                <?= $row['post_details']; ?>
+                <p><?= $row['post_details']; ?><p>
               </article>
           </div>
           <!-- / academic page content -->

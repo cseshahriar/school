@@ -13,7 +13,7 @@
                  Gallery
              </div>
              <div class="col-md-3 text-right">
-                <a href="add-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-plus-circle"></i> Add Gallery Item</a>
+                <a href="add-user.php" class="btn btn-sm btn btn-primary"><i class="fa fa-plus-circle"></i> Add Gallery Item</a>
             </div>
             <div class="clearfix"></div>
         </div>
