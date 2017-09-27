@@ -1,7 +1,7 @@
 html, body {
-        border: 0;
-        margin: 0;
-        padding: 0;
+      border: 0;
+      margin: 0;
+      padding: 0;
 }
 *   { 
     margin: 0;
@@ -18,22 +18,17 @@ a, a:active, a:hover, a:focus{
 .pl0 {
     padding-left: 0;
 }
-
 .pr0 {
     padding-right: 0;
 }
-
 @font-face{
     font-family:Playfair-Bold;
     src: url(../fonts/PlayfairDisplay-Bold.otf);
 }
-
 @font-face{
     font-family:OpenSans-Semibold;
     src: url(../fonts/OpenSans-Semibold.ttf);
 }
-
-
 @font-face{
     font-family:OpenSans-Regular;
     src: url(../fonts/OpenSans-Regular.ttf);
@@ -43,26 +38,20 @@ a, a:active, a:hover, a:focus{
     font-family:OpenSans-LightItalic;
     src: url(../fonts/OpenSans-LightItalic.ttf);
 }
-
-
 @font-face{
     font-family:PlayfairDisplay-Italic;
     src: url(../fonts/PlayfairDisplay-Italic.otf);
 }
-
-
 @font-face{
     font-family:OpenSans-LightItalic;
     src: url(../fonts/OpenSans-LightItalic.ttf);
 }
-
 .title-school {
     color: #7f234b;
     font-family:Playfair-Bold;
     text-transform: uppercase;
     font-size: 35px;
 }
-
 .btn-create {
     background-color: #7f234b;
     padding:7px 15px;
@@ -76,31 +65,24 @@ a, a:active, a:hover, a:focus{
     border-radius: 3px;
     transition: all 0.5s;
 }
-
 .btn-create:hover{
    background-color: transparent;
     border: 1px solid #7f234b; 
     color: #7f234b;
     transition: all 0.5s;
 }
-
 /*= Reset CSS */
-
-
 /*====custom-nav css====*/
 .custom-nav{
    padding-bottom: 15px;
 }
-
 .custom-nav .icon-bar{
     border: 2px solid #a54686;
 }
-
 .custom-nav button{
     border: 1px solid #a54686;
     margin-top: 15px;
 }
-
 .custom-nav .navbar-right li a{
     color: #595959;
     font-family:OpenSans-Semibold;
@@ -110,43 +92,33 @@ a, a:active, a:hover, a:focus{
     background-color: transparent;
     margin-top: 30px;
 }
-
 .custom-nav .navbar-right li:last-child a{
     color: #fff;
     background-color: #00a651;
 }
-
-
 .custom-nav .navbar-right li a:hover{
     color: #fff;
     background-color: #a54686;
 }
-
-
 .active-menu {
      color: #fff !important;
     background-color: #a54686 !important;
 }
-
 /*====slider css===*/
 .left-control {
     position: absolute;
     left: 5%;
     top: 36%;
 }
-
-
 .right-control {
     position: absolute;
     right: 5%;
     top: 36%;
 }
-
 .slider-main .carousel-caption{
    position: absolute;
     top: 20%;
 }
-
 .slider-main .carousel-caption h3{
    font-family:Playfair-Bold;
     vertical-align: top;
@@ -155,21 +127,18 @@ a, a:active, a:hover, a:focus{
      -vendor-animation-duration: 5s;
    -vendor-animation-delay: 5s;
 }
-
 .slider-main .carousel-caption h2{
    font-family:OpenSans-Semibold;
     color: #fff;
     text-transform: capitalize;
     font-size: 28px;
 }
-
 .slider-main .carousel-caption p{
     color: #fff;
     font-family:OpenSans-Regular;
     font-size: 14px;
     padding: 0% 15% 3% 15%;
 }
-
 .slider-main .carousel-caption a{
      color: #7f234b;
     background-color: transparent;
@@ -180,13 +149,11 @@ a, a:active, a:hover, a:focus{
     font-family:Playfair-Bold;
     font-size: 15px;
 }
-
 .slider-main .carousel-caption a:hover{
      color: #fff;
     background-color: #7f234b;
     border:1px solid #7f234b;
 }
-
 .slider-main .carousel-caption i{
      color: #fff;
      font-family:OpenSans-LightItalic;
@@ -201,34 +168,27 @@ a, a:active, a:hover, a:focus{
     padding-left: 30%;
     padding-bottom: 40px;
 }
-
 .footer-control{
     padding-left: 33%;
 }
-
 .controler .pre, .footer-control .pre{
       float: left;
       margin: 10px 5%;
      cursor: pointer;
 }
-
 .controler .title-school,  .footer-control .title-school{
     float: left;
-    }
-    
+  }
 .controler .next, .footer-control .next{
     float: left;
     margin: 10px 5%;
     cursor: pointer;
 }
-
-
 /*====Image hover effect all css===*/
 .success-item img, .success-gallary img{
     max-width: 100%;
     vertical-align: middle;
 }
-
 .success-item, .success-gallary{
     font-size: 20px;
     margin: 5px 0 10px;
@@ -266,7 +226,6 @@ a, a:active, a:hover, a:focus{
     width: 100%;
     padding: 20px;
 }
-
 .success-item {
     width: 100%;
     color: #fff;
@@ -299,8 +258,6 @@ a, a:active, a:hover, a:focus{
     opacity: 1;
     border: 1px solid #f5f5f5;
 }
-
-
 .success-item .text-desc h3{
      text-transform: uppercase;
     font-family:Playfair-Bold;
@@ -310,8 +267,6 @@ a, a:active, a:hover, a:focus{
     font-size: 22px;
     text-align: center;
 }
-
-
 .success-item h2 {
      display:block;
      position: relative;
@@ -335,9 +290,7 @@ a, a:active, a:hover, a:focus{
   position: absolute;
   top:-17%;
 }
-
 /*====Image hover effect all css===*/
-
 /*====index welcome page css===*/
 .welcome {
     background-image: url(../img/about.jpg);
@@ -347,23 +300,18 @@ a, a:active, a:hover, a:focus{
 	background-repeat: no-repeat;
     padding: 45px 0px;
 }
-
 .welcome .welcome-item h5{
      font-family:PlayfairDisplay-Italic;
     font-size: 16px;
      color: #636363;
 }
-
 .welcome .welcome-item h4{
     padding-bottom: 22px;
 }
-
 .welcome .welcome-item h4 span{
     padding-bottom: 22px;
     border-bottom: 1px solid #838383;
 }
-
-
 .welcome .welcome-item p{
     padding: 25px 6%;
     font-family:OpenSans-Regular;
@@ -375,12 +323,9 @@ a, a:active, a:hover, a:focus{
 .section-default {
     padding: 45px 0px;
 }
-
-
 .news-event .news-item {
   margin-bottom: 15px !important;  
 }
-
 .news-event h2{
     text-transform: uppercase;
     color: #7f234b;
@@ -388,12 +333,10 @@ a, a:active, a:hover, a:focus{
     font-family:OpenSans-Semibold;
     padding-bottom: 20px;
 }
-
 .news-event .news-item a{
     display: block;
     background-color: #fff;
 }
-
 .news-event .news-item a .news-clock{
    display:block;
     float: left;
@@ -401,7 +344,6 @@ a, a:active, a:hover, a:focus{
     width: 20%;
     background-color: #00a651;
 }
-
 .news-event .news-item a .news-clock h4{
     color: #fff;
     font-family:PlayfairDisplay-Italic;
@@ -410,33 +352,27 @@ a, a:active, a:hover, a:focus{
     font-size: 12px;
     text-align: center;
 }
-
 .news-event .news-item a .news-clock h3{
     color: #fff;
     font-family:Playfair-Bold;
     line-height: 0;
     text-align: center;
 }
-
 .news-event .news-item .news-details{
   display: block;  
     width: 80%;
      float: left;
 }
-
 .news-event .news-item .news-details p{
   padding: 0px 19px;
     color: #3b3b3b;
     font-family:OpenSans-Regular;
     font-size: 14px;
 }
-
-
 .news-event .news-item:hover> a .news-details p{
      color: #7f234b !important;
     text-decoration: underline;
 }
-
 /*===========*/
 .news-right .right-item{
   margin-bottom: 15px !important; 
@@ -455,7 +391,6 @@ a, a:active, a:hover, a:focus{
     width: 20%;
     background-color: #00a651;
 }
-
 .news-right .right-item .news-clock img{
   width: 100%;
     height: 100px;
@@ -465,26 +400,22 @@ a, a:active, a:hover, a:focus{
     width: 80%;
      float: left;
 }
-
 .news-right .right-item .news-details h5{
     color: #7f234b;
     text-transform: uppercase;
     font-size: 14px;
    font-family:OpenSans-Semibold;
 }
-
 .news-right .right-item .news-details p{
     color: #363636;
     font-family:OpenSans-Regular;
     font-size: 14px;
 }
-
 .news-right .right-item:hover> a{
     display: block;
     background-color: #f4f4f4;
     border:1px solid #eaeaea;
 }
-
 .news-right .right-item:hover> a .news-details p{
      color: #7f234b !important;
     text-decoration: underline;
@@ -497,21 +428,18 @@ a, a:active, a:hover, a:focus{
   width: 75%;
   float: right;
 }
-
 .news-info {
      display: inline-block;
     padding: 5px;
     border: 1px solid #fff;
     margin-top: 20px;
 }
-
 .news-info .fa{
     padding: 1px 6px; 
     background-color: #7f234b;
     font-size: 18px;
     color: #fff;
 }
-
 .news-info span{
    padding-right: 10px;
     font-size: 14px;
@@ -519,11 +447,9 @@ a, a:active, a:hover, a:focus{
      font-family:Playfair-Bold;
     text-transform: uppercase;
 }
-
 .news-info:hover {
     border: 1px solid #7f234b;
 }
-
 /*====Image hover effect all css===*/
 /*======footer image hover=========*/
 .footer-item .btn{
@@ -536,18 +462,15 @@ a, a:active, a:hover, a:focus{
     text-decoration: none; 
     transition: 0.4s;
 }
-
 .footer-item .btn:hover{
     background-color: #581733;
     color: #fff;
     transition: 0.4s;
 }
-
 .footer-item .image-box img{
     width: 100%;
     height: 250px;
 }
-
 .footer-item .text-desc{
     position: absolute; 
     left: 0; 
@@ -557,7 +480,6 @@ a, a:active, a:hover, a:focus{
     opacity: 0; 
     width: 100%; 
     }
-
 .footer-item .text-desc h3{
     text-transform: uppercase;
     font-family:Playfair-Bold;
@@ -570,12 +492,10 @@ a, a:active, a:hover, a:focus{
      transition: all 0.5s;
      padding-bottom: 15px;
     }
-
 .footer-item .text-desc:hover> h3{
     padding-top: 7%;
     transition: all 0.5s;
     }
-
 .footer-item .text-desc p{
     line-height: 20px;
      font-family:OpenSans-LightItalic;
@@ -583,7 +503,6 @@ a, a:active, a:hover, a:focus{
     margin-top: 15px;
     padding: 0% 5% 1% 5%;
 }
-
 .footer-item .port-1{
     float: left;
     width: 100%; 
@@ -603,43 +522,34 @@ a, a:active, a:hover, a:focus{
 .footer-item .port-1:hover img{
     transform: scale(1.5);
 }
-
 .footer-item .port-1.effect-1:hover .text-desc{
     top: 0;
     height: 250px;
     overflow: hidden;
 }
-
 .footer-item .port-1.effect-2 .text-desc{top: auto; bottom: -80%;}
 .footer-item .port-1.effect-2:hover .text-desc{bottom: 0;}
-
 .footer-item .port-1.effect-3 .text-desc{top: 50%; left: 50%; width: 0; height: 0; overflow: hidden; padding: 0;}
 .footer-item .port-1.effect-3:hover .text-desc{width: 100%; top: 0; left: 0; height: 100%;}
-
 /*=====footer image hover=====*/
-
-
 footer {
     margin-top: 130px;
     padding: 40px 0px;
     position: relative;
     background-color: #581733;
 }
-
 .back_to_top{
     position: absolute;
     right: 7%;
     top: -4%;
     cursor: pointer;
 }
-
 footer .footer-details h2{
     font-size: 20px;
     color: #fff;
      font-family:OpenSans-Regular;
     padding-bottom: 10px;
 }
-
 footer .footer-details ul li{
     color: #a6a6a6;
     font-size: 12px;
@@ -647,11 +557,9 @@ footer .footer-details ul li{
     display: block;
     padding-bottom: 20px;  
 }
-
 footer .footer-details ul li span{
     display: block;
 }
-
 footer .footer-details ul li b a{
     display: inline-block;
     padding-right:10px;
@@ -659,14 +567,11 @@ footer .footer-details ul li b a{
     font-size: 16px;
     font-family:Playfair-Bold;
 }
-
 footer .footer-details ul li b a:hover{
     color: #fff;
 }
 /*footer end*/
-
 /*********************/
-
 .social-nav {
   padding: 0;
   list-style: none;
@@ -694,7 +599,6 @@ footer .footer-details ul li b a:hover{
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .model-0 {
   position: absolute;
   -moz-transition: 0.5s;
@@ -804,12 +708,10 @@ background-color:rgba(7,7,7,0.6);
     padding: 4% 6%;
     color: #fff;
 }
-
 .widget-education ul li a:hover{
     background-color: #6691a5;
     color: #fff;
 }
-
 .widget-education ul li:first-child a{
     display: block;
     text-transform: uppercase;
@@ -820,8 +722,6 @@ background-color:rgba(7,7,7,0.6);
     padding: 5% 6%;
     color: #fff;
 }
-
-
 article h1{
   text-transform: capitalize;
   color: #7f234b;
@@ -829,7 +729,6 @@ article h1{
     margin-top: 25px;
     margin-bottom: 25px;
 }
-
 article p{
     color: #636363;
     font-family:OpenSans-Regular;
@@ -837,14 +736,11 @@ article p{
     line-height: 23px;
     text-align: justify;
 }
-
 article p img{
     float: right;
     padding-left: 5%;
     padding-bottom: 3%;
-    
 }
-
 article h6{
     display: block;
     font-size: 16px;
@@ -852,7 +748,6 @@ article h6{
     color: #636363;
     line-height: 26px;    
 }
-
 .contact-us input {
       width: 100%;
     padding: 10px 10px;
@@ -860,7 +755,6 @@ article h6{
     font-size: 14px;
     border-radius: 3px;
 }
-
 .contact-us textarea {
       width: 100%;
     padding: 8px 10px;
@@ -868,7 +762,6 @@ article h6{
     font-size: 14px;
     border-radius: 3px;
 }
-
 .contact-us input[type='submit']{
     width: 40%;
     margin-top: 10px;
@@ -881,7 +774,6 @@ article h6{
     border:1px solid #7f234b;
     font-size: 14px;
 }
-
 .contact-us input[type='submit']:hover{
     background-color: #fff;
     color: #7f234b;
@@ -901,4 +793,11 @@ article h6{
     color: red;
     margin-top: 5px;
     padding-left: 10px;
+}
+img{
+  width: 100% !important;
+  height: auto;
+}
+a.left-control,a.right-control {
+    display: none;
 }
