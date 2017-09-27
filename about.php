@@ -78,14 +78,13 @@
                   $squery = mysqli_query($dbconnect, $social);
                   while($srow = mysqli_fetch_array($squery)):
                 ?>
-                  <b><a href=""><i class="fa fa-<?= $srow['social_fa_class']; ?>"></i></a></b>
+                  <b><a href="<?= $srow['social_link']; ?>"><i class="fa fa-<?= $srow['social_fa_class']; ?>"></i></a></b>
                 <?php endwhile; ?>
                 </li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
    <!-- campus address  -->
-<!-- campus address  -->
     <?php 
         $select = "SELECT * FROM footer_info WHERE finfo_cat_id='2' LIMIT 0,2; ";
         $query = mysqli_query($dbconnect, $select);
@@ -93,11 +92,11 @@
       ?>
    <div class="col-sm-3">
        <div class="footer-details">
-           <h2><?= $row['finfo_title']; ?></h2>
+           <h2><?= $crow['finfo_title']; ?></h2>
            <ul>
-               <li><?= $row['finfo_address_one']; ?></li>
-               <li><?= $row['finfo_address_two']; ?></li>
-               <li><?= $row['finfo_address_three']; ?></li>
+               <li><?= $crow['finfo_address_one']; ?></li>
+               <li><?= $crow['finfo_address_two']; ?></li>
+               <li><?= $crow['finfo_address_three']; ?></li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
@@ -105,17 +104,26 @@
 <!-- /campus address  -->
    <div class="col-sm-3">
        <div class="footer-details">
-      <?php 
-        $select = "SELECT * FROM footer_info WHERE finfo_cat_id='3' ";
-        $query = mysqli_query($dbconnect, $select);
-        while($row = mysqli_fetch_array($query)):
-      ?>
+        <?php 
+          $select = "SELECT * FROM footer_info WHERE finfo_cat_id='3' ";
+          $query = mysqli_query($dbconnect, $select);
+          $row = mysqli_fetch_array($query);
+        ?>
+       <!-- associated -->
+       <h2><?= $row['finfo_title']; ?></h2>
+       <ul>
+           <li style="padding-bottom: 0px;"><a href=""><img class="img-responsive" src="admin/uploads/<?= $row['finfo_image']; ?>" alt=""></a></li>
+           <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+       </ul>
+         <!-- member of   -->
+        <?php 
+          $select = "SELECT * FROM footer_info WHERE finfo_cat_id='4' ";
+          $query = mysqli_query($dbconnect, $select);
+          $row = mysqli_fetch_array($query); ?>
            <h2><?= $row['finfo_title']; ?></h2>
            <ul>
-               <li style="padding-bottom: 0px;"><a href=""><img class="img-responsive" src="admin/uploads/<?= $row['finfo_image']; ?>" alt=""></a></li>
                <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
            </ul>
-         <?php endwhile; ?>
        </div>
    </div><!--col-sm-3 end-->
  </div>  

@@ -97,7 +97,6 @@ getHeader();
   </div> <!--container end-->
 </section>
 <!-- / latest news -->  
-
 <section class="section-default">
   <div class="container">
       <div class="col-sm-6">
@@ -162,7 +161,6 @@ getHeader();
               <a href="#" class="news-info"><span>read more</span><i class="fa fa-angle-right"></i></a>
           </div> <!--news-event end-->
        </div><!--col-sm-6 end-->
-
   </div>
 </section>   
 <?php  
