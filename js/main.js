@@ -1,7 +1,6 @@
-  $('#carousel-example-generic').carousel({
+$('#carousel-example-generic').carousel({
     interval: 2000
 });
-
 
 //Enllax js activation
 $(window).enllax();
@@ -110,9 +109,7 @@ $('.footer-slick').slick({
         }]
     });
 //   slick slider
-
 //
-
 /* Demo Scripts for Bootstrap Carousel and Animate.css article
 * on SitePoint by Maria Antonietta Perna
 */

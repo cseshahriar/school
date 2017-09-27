@@ -8,16 +8,13 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 }
-
 ul,ol {
     list-style-type: none;
 }
-
 a, a:active, a:hover, a:focus{
     text-decoration: none;
     outline: 0;
 }
-
 .pl0 {
     padding-left: 0;
 }
@@ -899,4 +896,10 @@ article h6{
 }
 .slider-main .carousel-caption h3 {
     font-size: 36px !important;
+}
+.error {
+    color: red;
+    margin-top: 5px;
+    padding-left: 10px;
+    display: block;
 }

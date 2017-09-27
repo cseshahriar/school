@@ -71,21 +71,21 @@
           <?php if(isset($msg)){echo $msg;} ?><br><br>
         </article>
           <div class="contact-us">
-             <form action="" method="post">
+             <form action="" method="post" id="contact">
                 <div class="col-sm-6 pl0">
                   <div class="form-group">
-                      <input type="text" name="name" placeholder="Full Name">                    
+                      <input type="text" id="name" name="name" placeholder="Full Name">                    
                   </div><!--form group-->
                   <div class="form-group">
-                      <input type="email" name="email" placeholder="Email">                       
+                      <input type="email" id="email" name="email" placeholder="Email">                       
                   </div><!--form group-->
                   <div class="form-group">
-                      <input type="text" name="subject" placeholder="Subject">           
+                      <input type="text" id="subject" name="subject" placeholder="Subject">           
                   </div><!--form group-->
                 </div>
                 <div class="col-sm-6 pr0">
-                     <textarea name="massage"  rows="7" placeholder="Type Message"></textarea>
-                    <input type="submit" name="sent" value="Sent Message">  
+                     <textarea id="massage" name="massage"  rows="7" placeholder="Type Message"></textarea>
+                    <input type="submit" id="submit" name="sent" value="Sent Message">  
                 </div>
              </form>
           </div>
@@ -93,9 +93,6 @@
       <!-- / contact page content -->
   </div>
 </section>
-<!-- jquery msg hide -->
-<script src="js/vendor/jquery-1.12.0.min.js"></script>
-<script src="js/autohide.js"></script>
 <!-- footer   -->
 <footer>
  <div class="container">
@@ -175,6 +172,10 @@
 <!-- /Social Nav-->
   <!-- Add your site or application content here -->
   <script src="js/vendor/jquery-1.12.0.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/contact-validation.js"></script>
+  <!-- jquery msg hide -->
+  <script src="js/autohide.js"></script> 
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.enllax.min.js"></script>
   <script src="js/slick.min.js"></script>
