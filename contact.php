@@ -2,26 +2,65 @@
   require_once('function/functions.php'); 
   getHeader(); 
   //for message insert
-  if(isset($_POST['sent'])){
-    $name = testUserInput($_POST['name']);
-    $email = testUserInput($_POST['email']);
-    $subject =testUserInput($_POST['subject']);
-    $massage = testUserInput($_POST['massage']);
+  if(!empty($_POST)){
+
+    //name validation
+    if(empty($_POST['name'])){
+      $name_error = "Name is required";
+    }else{
+      $name = input_filter($_POST['name']);
+      if(!preg_match("/^[A-Za-z. ]*$/", $name)){
+        $name_error = "Only letter , white space and dot are allowed";
+      }
+    }
+    //email validation
+    if(empty($_POST['email'])){
+      $email_error = "Email is required";
+    }else{
+      $email = input_filter($_POST['email']);
+      if(!preg_match("/[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0-9._-]{2,}/", $email)){
+        $email_error = "Invalid email format";
+      }
+    }
+    //subject validation
+    if(empty($_POST['subject'])){
+      $subject_error = "Name is required";
+    }else{
+      $subject =input_filter($_POST['subject']);
+      if(!preg_match("/^[A-Za-z. ]*$/", $subject)){
+        $subject_error = "Only letter , white space and dot are allowed";
+      }
+    }
+    //message validation
+    if(empty($_POST['subject'])){
+      $message_error = "Name is required";
+    }else{
+      $massage = input_filter($_POST['massage']);
+      if(!preg_match("/^[A-Za-z. ]*$/", $massage)){
+        $message_error = "Only letter , white space and dot are allowed";
+      }
+    }
+
     if(!empty($name && $email && $subject && $massage)){
       $select = "INSERT INTO comments(comment_name, comment_email, comment_subject, massage)
       VALUES('$name', ' $email', '$subject', '$massage')";
-      $query = mysqli_query($dbconnect, $select);
-      if($query){
-        $msg = '<span id="massages" class="text-danger">Your massage has been sent successfully!</span>';
+      if(!$name_error && !$email_error && !$subject_error && !$message_error){
+         $query = mysqli_query($dbconnect, $select);
+        if($query){
+          $msg = '<span id="massages" class="text-danger">Your massage has been sent successfully!</span>';
+        }else{
+           $msg = '<span id="massages" class="text-danger">Massage sent faild!</span>';
+        }
       }else{
-         $msg = '<span id="massages" class="text-danger">Massage sent faild!</span>';
+        $msg = '<span id="massages" class="text-danger">Invalid data!</span>';
       }
+
     }else{
       $msg = '<span id="massages" class="text-danger">All input field must not be empty!</span>';
     }
   }
   //data filtering function
-    function testUserInput($data){
+    function input_filter($data){
       $data = trim($data);
       $data = htmlentities($data);
       $data = htmlspecialchars($data);
@@ -74,17 +113,22 @@
              <form action="" method="post" id="contact">
                 <div class="col-sm-6 pl0">
                   <div class="form-group">
-                      <input type="text" id="name" name="name" placeholder="Full Name">                    
+                      <input type="text" id="name" name="name" placeholder="Full Name" />
+                      <span class="error"><?php if(isset($name_error)) {echo $name_error;} ?></span>
                   </div><!--form group-->
                   <div class="form-group">
-                      <input type="email" id="email" name="email" placeholder="Email">                       
+                      <input type="email" id="email" name="email" placeholder="Email" />  
+                      <span class="error"><?php if(isset($email_error)){echo $email_error;} ?></span>        
                   </div><!--form group-->
                   <div class="form-group">
-                      <input type="text" id="subject" name="subject" placeholder="Subject">           
+                      <input type="text" id="subject" name="subject" placeholder="Subject" />
+                      <span class="error"><?php if(isset($subject_error)){echo $subject_error;} ?></span> 
                   </div><!--form group-->
                 </div>
                 <div class="col-sm-6 pr0">
                      <textarea id="massage" name="massage"  rows="7" placeholder="Type Message"></textarea>
+                     <span class="error"><?php if(isset($message_error)){echo $message_error;} ?></span> 
+                    <!-- submit button -->
                     <input type="submit" id="submit" name="sent" value="Sent Message">  
                 </div>
              </form>

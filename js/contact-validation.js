@@ -42,8 +42,8 @@ $(document).ready(function(){
 	});
 });
 //for final massage
-$.validator.setDefaults({
-	submitHandler:function(form){
-		alert("submitted!");
-	}
-});
+// $.validator.setDefaults({
+// 	submitHandler:function(form){
+// 		alert("submitted!");
+// 	}
+// });
