@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2017 at 09:17 AM
+-- Generation Time: Sep 28, 2017 at 06:43 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -39,7 +39,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`banner_id`, `banner_title`, `banner_subtitle`, `banner_image`, `banner_cat_id`) VALUES
-(1, 'SCHOLASTICA SCHOOL', 'Providing excellent education since 1977', 'Banner-1506223197-70105.jpg', 1),
+(1, 'SCHOLASTICA SCHOOL', 'Providing excellent education since 1977', 'Banner-1506496555-14266.jpg', 1),
 (2, 'SCHOLASTICA SCHOOL', 'Providing excellent education since 1977', 'Banner-1506223262-26565.jpg', 2),
 (3, 'SCHOLASTICA SCHOOL', 'Providing excellent education since 1977', 'academic-banner.jpg', 3),
 (4, 'SCHOLASTICA SCHOOL', 'Providing excellent education since 1977', 'academic-banner.jpg', 4),
@@ -111,7 +111,7 @@ CREATE TABLE `footer_info` (
 --
 
 INSERT INTO `footer_info` (`finfo_id`, `finfo_title`, `finfo_address_one`, `finfo_address_two`, `finfo_address_three`, `finfo_address_four`, `finfo_image`, `finfo_cat_id`) VALUES
-(1, 'Central Office:', 'Ascent Group House 3/D, Road 2/A, Block J,Baridhara, ', '<span>Tele: 8860147,8860132,8819500,</span><span>8815222,8856019-20 & 9887277</span>', '<span>Fax: (+88 02) 8813141</span> <span> Email: info@scholasticabd.com</span>', '\n  ', 'Campus-1506230159-403791.', 1),
+(1, 'Central Office:', 'Ascent Group House 3/D, Road 2/A, Block J,Baridhara,', '&amp;lt;span&amp;gt;Tele: 8860147,8860132,8819500,&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;8815222,8856019-20 &amp;amp; 9887277&amp;lt;/span&amp;gt;', '&amp;lt;span&amp;gt;Fax: (+88 02) 8813141&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt; Email: info@scholasticabd.com&amp;lt;/span&amp;gt;', '\n  ', 'footer-1506497508-59367.', 1),
 (2, 'Campus Address:', '<span>Senior campus,Uttara, Plot 2,</span>\r\n                   <span>Road 8 &amp; 9, Sector 1,</span>\r\n                   <span>Uttara Model Town,</span>\r\n                   <span>Dhaka 1230</span>\r\n', '<span>Junior campus,Uttara, Plot 1, Road </span><span>21, Sector 4, Uttara Model Town,</span> Dhaka 1230', '<span>Senior Campus,Mirpur, Plot 2/B-2,</span> <span> 2/C line one, Section 13, Mirpur,</span> Dhaka 1216', '', '', 2),
 (3, 'Campus Address:', '<span>Junior campus,Dhanmondi, Plot 78,</span>\r\n                   <span>Road 8/A, Mirza Golam Hafiz Road,</span>\r\n                   <span> Dhanmondi R/A, Dhaka 1209</span>\r\n', '<span>Junior campus,Gulshan, Plot </span>\r\n                   <span>lot NE(D)3,Gulshan Avenue,North,Shaheed</span>\r\n                   <span> Major , Najmul Haque Sarak,Gulshan 2,</span>\r\n                   <span>Dhaka 1212</span>\r\n', '', '', '', 2),
 (4, 'Associate School of:', '', '', '', '', 'footer-1506230485-56700.png', 3),
@@ -158,7 +158,7 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`pslide_id`, `pslide_title`, `pslide_details`, `pslide_btn_text`, `pslide_btn_url`, `pslide_image`) VALUES
-(1, 'Student Affairs Unit', 'Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third position.', 'Read More', '#', 'Gallery-1506224673-32771.jpg'),
+(1, 'Student Affairs Unit', 'Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third position.', 'Read More', '#', 'Gallery-1506497496-33067.jpg'),
 (2, 'Student Affairs Unit', 'Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third position.', 'Read More', '#', 'img-3.jpg'),
 (3, 'Student Affairs Unit', 'Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third .', 'Read More', '#', 'img-4.jpg'),
 (4, 'Student Affairs Unit', 'Scholastica team from Senior campus, Mirpur achieved third position at the Kokomo Dhaka Metropolitan  Senior campus, Mirpur achieved third .', 'Read More', '#', 'img-5.jpg');
@@ -201,14 +201,14 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`news_id`, `news_title`, `news_subtitle`, `news_details`, `news_btn_text`, `news_btn_url`, `news_image`, `news_date`, `news_cat_id`) VALUES
-(1, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'Latest News-1506143756-87653.jpg', '2017-09-18', 1),
+(1, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'Latest-news-1506497459-84701.jpg', '2017-09-18', 1),
 (2, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'sucees-two.jpg', '2017-09-20', 1),
 (3, 'Student Affairs Unit', 'Student Affairs Unit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Learn more', '#', 'success-three.jpg', '2017-09-20', 1),
 (5, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2),
 (6, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2),
 (7, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2),
 (8, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  awarded for achieving highest ...', '', '', '', '2017-03-06', 2),
-(9, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'Latest News-1506145759-98022.jpg', '2017-09-20', 3),
+(9, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'Latest News-1506497482-66020.jpg', '2017-09-20', 3),
 (10, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'news-1.jpg', '2017-09-20', 3),
 (11, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'news-1.jpg', '2017-09-20', 3),
 (12, '', '', 'Ten Scholastica students were awarded for achieving highest marks in different subjects in the world and in the  ...', '', '', 'news-1.jpg', '2017-09-20', 3),
@@ -259,13 +259,13 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`post_id`, `post_title`, `post_subtitle`, `post_details`, `post_btn_txt`, `post_btn_url`, `post_date`, `post_image`, `post_cat_id`) VALUES
-(1, 'Welcome to', 'SCHOLASTICA SCHOOL', 'SCHOLASTICA WAS ESTABLISHED IN 1977 BY MRS. YASMEEN MURSHED. IT WAS FOUNDED WITH A MISSION TO PROVIDE A BALANCED AND WELL-ROUNDED EDUCATION FOR ALL OUR STUDENTS, USING ENGLISH AS THE PRIMARY MEDIUM OF INSTRUCTION BUT PLACING EQUAL EMPHASIS ON BANGLA. SCHOLASTICA&amp;amp;amp;#039;S MISSION IS TO BUILD CURIOUS, KNOWLEDGEABLE AND CARING YOUNG INDIVIDUALS, WHO WILL BE EQUIPPED TO TACKLE HEAD-ON THE CHALLENGES OF OUR MODERN-DAY &amp;amp;amp;quot;GLOBAL VILLAGE&amp;amp;amp;quot;. THEY WILL ASPIRE TO BECOME RESPONSIBLE CITIZENS, WHO WILL EMBRACE AND RESPECT PEOPLE FROM OTHER CULTURES AND WALKS OF LIFE.', 'Read More', '#', '2017-09-20 11:18:21', '', 1),
-(2, 'Academics', '', '<p>Scholastica is one of the largest private English-medium schools in Bangladesh, offering pre-school to A\' Level classes of an international standard. It offers a complete school-leaving course using English as the medium of instruction. We emphasize equal proficiency in Bangla as a necessary prerequisite for a well-rounded education for Bangladeshi students.</p><p>Scholastica\'s curriculum has been designed to reflect the specific needs of Bangladeshi students keeping in mind their heritage, culture and national identity. </p><p>The school has designed a comprehensive curriculum for all classes leading to the University of Cambridge \nInternational Examinations Ordinary and Advanced Level General Certificate of Education courses which are \ntaught in Classes IX to XII. These examinations are administered by the British Council, Dhaka. </p>', '', '', '2017-09-13 00:00:00', 'Latest News-1506150917-59757.jpg', 2),
-(3, 'Admission in Scholastica', '', '<p>The admissions process in Scholastica is very transparent. Anyone is welcome to apply without any reference. Absolutely no donations are accepted; only published fees are required. </p>\n <p>During the admissions process, interviews are held by a panel of senior management, not a single individual. The interview panel is a team of qualified individuals from Scholastica\'s senior management. All decisions for admission are made through a committee, not by any one individual.</p>\n<p>No external agents/agencies are appointed or involved in the admissions process; the Admissions Office is the only point of contact for all admissions-related applications and inquiries. No Ascent Group personnel have a role in the admissions process except those in the Admissions Office and on the interview and selection panel. </p>\n                        \n<p>During the admissions process, interviews are held by a panel of senior management, not a single individual. The interview panel is a team of qualified individuals from Scholastica\'s senior management. All decisions for admission are made through a committee, not by any one individual.</p>', '', '', '2017-09-06 00:00:00', 'Latest News-1506151246-87015.jpg', 3),
-(4, 'Our Curriculum', '', 'Scholastica provides a complete school-leaving course of study, from pre-school to the A\' Levels. We have developed our own curriculum; it aims to deliver a holistic education program combining the core competencies of the national and the British curricula. The comprehensive curriculum designed for the elementary, secondary and high school classes ultimately leads to the University of Cambridge International Examinations Ordinary and Advanced Level General Certificate of Education exams, taught in the high school. These examinations are conducted under the auspices of the British Council, Dhaka.', '', '', '2017-09-11 00:00:00', '', 4),
-(5, 'Junior School', '', 'In the Junior school, from Playgroup to Kindergarten II, we encourage children to observe their surroundings, think independently, ask questions and freely express themselves without fear or inhibition, thereby honing their observation, listening, verbal ', '', '', '2017-09-20 00:00:00', '', 4),
+(1, 'Welcome to', 'SCHOLASTICA SCHOOL', 'SCHOLASTICA WAS ESTABLISHED IN 1977 BY MRS. YASMEEN MURSHED. IT WAS FOUNDED WITH A MISSION TO PROVIDE A BALANCED AND WELL-ROUNDED EDUCATION FOR ALL OUR STUDENTS, USING ENGLISH AS THE PRIMARY MEDIUM OF INSTRUCTION BUT PLACING EQUAL EMPHASIS ON BANGLA. SCHOLASTICA&amp;amp;amp;amp;amp;#039;S MISSION IS TO BUILD CURIOUS, KNOWLEDGEABLE AND CARING YOUNG INDIVIDUALS, WHO WILL BE EQUIPPED TO TACKLE HEAD-ON THE CHALLENGES OF OUR MODERN-DAY &amp;amp;amp;amp;amp;quot;GLOBAL VILLAGE&amp;amp;amp;amp;amp;quot;. THEY WILL ASPIRE TO BECOME RESPONSIBLE CITIZENS, WHO WILL EMBRACE AND RESPECT PEOPLE FROM OTHER CULTURES AND WALKS OF LIFE.', 'Read More', '#', '2017-09-20 11:18:21', '', 1),
+(2, 'Academics', '', 'Scholastica is one of the largest private English-medium schools in Bangladesh, offering pre-school to A&amp;#039; Level classes of an international standard. It offers a complete school-leaving course using English as the medium of instruction. We emphasize equal proficiency in Bangla as a necessary prerequisite for a well-rounded education for Bangladeshi students.\r\n\r\nScholastica&amp;#039;s curriculum has been designed to reflect the specific needs of Bangladeshi students keeping in mind their heritage, culture and national identity. \r\n\r\n The school has designed a comprehensive curriculum for all classes leading to the University of Cambridge \r\nInternational Examinations Ordinary and Advanced Level General Certificate of Education courses which are \r\n\r\ntaught in Classes IX to XII. These examinations are administered by the British Council, Dhaka.', '', '', '2017-09-13 00:00:00', 'Latest-news-1506502687-95822.jpg', 2),
+(3, 'Admission in Scholastica', '', 'The admissions process in Scholastica is very transparent. Anyone is welcome to apply without any reference. Absolutely no donations are accepted; only published fees are required.\r\n\r\nDuring the admissions process, interviews are held by a panel of senior management, not a single individual. The interview panel is a team of qualified individuals from Scholastica&amp;#039;s senior management. All decisions for admission are made through a committee, not by any one individual.\r\n\r\nNo external agents/agencies are appointed or involved in the admissions process; the Admissions Office is the only point of contact for all admissions-related applications and inquiries. No Ascent Group personnel have a role in the admissions process except those in the Admissions Office and on the interview and selection panel.\r\n\r\nDuring the admissions process, interviews are held by a panel of senior management, not a single individual. The interview panel is a team of qualified individuals from Scholastica&amp;#039;s senior management. All decisions for admission are made through a committee, not by any one individual.', '', '', '2017-09-06 00:00:00', 'Latest-news-1506497161-31393.jpg', 3),
+(4, 'Our Curriculum', '', 'Scholastica provides a complete school-leaving course of study, from pre-school to the A&amp;#039; Levels. We have developed our own curriculum; it aims to deliver a holistic education program combining the core competencies of the national and the British curricula. The comprehensive curriculum designed for the elementary, secondary and high school classes ultimately leads to the University of Cambridge International Examinations Ordinary and Advanced Level General Certificate of Education exams, taught in the high school. These examinations are conducted under the auspices of the British Council, Dhaka.', '', '', '2017-09-11 00:00:00', '', 4),
+(5, 'Junior School', '', 'In the Junior school, from Playgroup to Kindergarten II, we encourage children to observe their surroundings, think independently, ask questions and freely express themselves without fear or inhibition, thereby honing their observation, listening, verbal', '', '', '2017-09-20 00:00:00', '', 4),
 (6, 'Middle School', '', 'From Class I onwards, our curriculum exposes students to more subjects in a formal classroom setting. The curriculum focuses on developing numeracy, literacy and an understanding of the environment and our surroundings. Learning in these classes is design', '', '', '2017-09-19 00:00:00', '', 4),
-(7, 'About Us', '', '<p>Scholastica\'s mission is to develop curious, knowledgeable and caring young individuals, who will be equipped to tackle head-on the challenges of our modern-day \"global village.\" They will aspire to become responsible and productive citizens, who will contribute to their communities, and embrace and respect people from other cultures and walks of life.</p><p>\n\nScholastica was established in 1977 by Mrs. Yasmeen Murshed. It was founded to provide a balanced and well-rounded education for students, using English as the primary medium of instruction but placing equal emphasis on Bangla.</p>\n<p>\nThe customized curriculum builds the knowledge, skills and attitudes that students need to succeed in their academic and professional careers after school. Students are encouraged to challenge themselves, their peers and their teachers in a setting that gives them confidence and builds their skills to think independently.</p>', '', '', '2017-09-20 00:00:00', 'about-ct.jpg', 5),
+(7, 'About Us', '', 'Scholasticas mission is to develop curious, knowledgeable and caring young individuals, who will be equipped to tackle head-on the challenges of our modern-day &amp;amp;amp;quot;global village.&amp;amp;amp;quot; They will aspire to become responsible and productive citizens, who will contribute to their communities, and embrace and respect people from other cultures and walks of life.\r\n\r\nScholastica was established in 1977 by Mrs. Yasmeen Murshed. It was founded to provide a balanced and well-rounded education for students, using English as the primary medium of instruction but placing equal emphasis on Bangla.\r\n\r\nThe customized curriculum builds the knowledge, skills and attitudes that students need to succeed in their academic and professional careers after school. Students are encouraged to challenge themselves, their peers and their teachers in a setting that gives them confidence and builds their skills to think independently.', '', '', '2017-09-20 00:00:00', 'About-news-1506497413-50968.jpg', 5),
 (8, 'High School', '', 'Scholastica\'s O\' Level program encourages students to engage, invent, manage and compete - equipping them for eventual success in the public examinations under Cambridge International Examinations. Years of experience teaching the O\' Levels has allowed us', '', '', '2017-09-06 00:00:00', '', 4);
 
 -- --------------------------------------------------------
@@ -312,9 +312,10 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`slide_id`, `slide_title`, `slide_subtitle`, `slide_description`, `slide_btn_text`, `slide_btn_url`, `slide_image`, `active_slider`) VALUES
-(1, 'Career and Technical Education', '', 'Enter as much criteria on the left as you wish, or click an area on the map below to begin your search in a particular borough. To find your zoned school, enter your home address below.', 'Read More', '#', 'slide-1506069119-84033.jpg', 1),
+(1, 'Career and Technical Education', '', 'Enter as much criteria on the left as you wish, or click an area on the map below to begin your search in a particular borough. To find your zoned school, enter your home address below.', 'Read More', '#', 'slide-1506496473-69957.jpg', 1),
 (2, 'Kindergarten Offer Letters', '', 'Providing excellent education since 1977 .Scholastica was established in 1977 by Mrs. Yasmeen Murshed. Scholastica was established in 1977 by Mrs. Yasmeen Murshed..... ', 'Read More', '#', 'slider-two.jpg', 0),
-(3, 'Elementary Schools', 'click an area on the map below to begin.', 'click an area on the map below to begin your search in a particular borough. To find your zoned school, enter your enter your home address below.', 'Read More', '#', 'slider-three.jpg', 0);
+(3, 'Elementary Schools', 'click an area on the map below to begin.', 'click an area on the map below to begin your search in a particular borough. To find your zoned school, enter your enter your home address below.', 'Read More', '#', 'slider-three.jpg', 0),
+(4, ' Career and Technical Education', '', 'ough. To find your zoned school, enter your enter your home address below.', 'Read More', '#', 'Slider-1506496508-674185.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -549,7 +550,7 @@ ALTER TABLE `post_category`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `social`
 --
@@ -559,7 +560,7 @@ ALTER TABLE `social`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_user_role`
 --

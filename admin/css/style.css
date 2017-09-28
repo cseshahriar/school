@@ -143,35 +143,28 @@ body{
 	font-size:16px;
 	font-weight:bold;
 	}
-	
 /*table Part code start*/
-
 .table_cus{
 	border:1px solid #ddd;
 	}
-	
 .table_head{
 	background-color:#ccc;
 	color:#000;
 	}
-	
 .pagina_cus{
 	padding:0px;
 	margin:0px;
 	}
-	
 /*View Part code start*/
 .view_table_cus{
 	border:1px solid #ddd;
 	}
-	
 .view_table_cus tr td:first-child{
 	width:30%;
 	text-align:right;
 	font-size:15px;
 	font-weight:bold;
 	}
-	
 .view_table_cus tr td:last-child{
 	width:68%;
 	text-align:left;
