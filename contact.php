@@ -2,7 +2,7 @@
   require_once('function/functions.php'); 
   getHeader(); 
   //for message insert
-  $name = $email = $subject = $massage = "";
+  $name = $email = $subject = $massage = ""; 
   if(!empty($_POST)){
     //name validation
     if(empty($_POST['name'])){
@@ -149,9 +149,9 @@
        <div class="footer-details">
            <h2><?= $row['finfo_title']; ?></h2>
            <ul>
-               <li><?= $row['finfo_address_one']; ?></li>
-               <li><?= $row['finfo_address_two']; ?></li>
-               <li><?= $row['finfo_address_three']; ?></li>
+               <li><?= html_entity_decode($row['finfo_address_one']); ?></li>
+               <li><?= html_entity_decode($row['finfo_address_two']); ?></li>
+               <li><?= html_entity_decode($row['finfo_address_three']); ?></li>
                 <li>
                 <?php 
                   $social = "SELECT * FROM social";
@@ -174,9 +174,9 @@
        <div class="footer-details">
            <h2><?= $crow['finfo_title']; ?></h2>
            <ul>
-               <li><?= $crow['finfo_address_one']; ?></li>
-               <li><?= $crow['finfo_address_two']; ?></li>
-               <li><?= $crow['finfo_address_three']; ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_one']); ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_two']); ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_three']); ?></li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
@@ -193,7 +193,7 @@
        <h2><?= $row['finfo_title']; ?></h2>
        <ul>
            <li style="padding-bottom: 0px;"><a href=""><img class="img-responsive" src="admin/uploads/<?= $row['finfo_image']; ?>" alt=""></a></li>
-           <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+           <li style="padding-bottom: 0px;"><?= html_entity_decode($row['finfo_address_one']); ?></li>
        </ul>
          <!-- member of   -->
         <?php 
@@ -202,7 +202,7 @@
           $row = mysqli_fetch_array($query); ?>
            <h2><?= $row['finfo_title']; ?></h2>
            <ul>
-               <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+               <li style="padding-bottom: 0px;"><?= html_entity_decode($row['finfo_address_one']); ?></li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
@@ -224,8 +224,6 @@
 <!-- /Social Nav-->
   <!-- Add your site or application content here -->
   <script src="js/vendor/jquery-1.12.0.min.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-  <script src="js/contact-validation.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.enllax.min.js"></script>
   <script src="js/slick.min.js"></script>

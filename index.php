@@ -55,7 +55,7 @@ getHeader();
                  ?>
                  <h5><?php echo $row['post_title']; ?></h5>
                  <h4 class="title-school"><span><?php echo $row['post_subtitle']; ?></span></h4>
-                 <p class="title-school"><?php echo $row['post_details']; ?></p>
+                 <p class="title-school"><?php echo html_entity_decode($row['post_details']); ?></p>
                  <a class="btn-create" href="<?= $row['post_btn_url']; ?>"><?= $row['post_btn_txt']; ?></a>
              </div>
         </div>
@@ -210,9 +210,9 @@ getHeader();
        <div class="footer-details">
            <h2><?= $row['finfo_title']; ?></h2>
            <ul>
-               <li><?= $row['finfo_address_one']; ?></li>
-               <li><?= $row['finfo_address_two']; ?></li>
-               <li><?= $row['finfo_address_three']; ?></li>
+               <li><?= html_entity_decode($row['finfo_address_one']); ?></li>
+               <li><?= html_entity_decode($row['finfo_address_two']); ?></li>
+               <li><?= html_entity_decode($row['finfo_address_three']); ?></li>
                 <li>
                 <?php 
                   $social = "SELECT * FROM social";
@@ -235,9 +235,9 @@ getHeader();
        <div class="footer-details">
            <h2><?= $crow['finfo_title']; ?></h2>
            <ul>
-               <li><?= $crow['finfo_address_one']; ?></li>
-               <li><?= $crow['finfo_address_two']; ?></li>
-               <li><?= $crow['finfo_address_three']; ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_one']); ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_two']); ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_three']); ?></li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
@@ -254,7 +254,7 @@ getHeader();
        <h2><?= $row['finfo_title']; ?></h2>
        <ul>
            <li style="padding-bottom: 0px;"><a href=""><img class="img-responsive" src="admin/uploads/<?= $row['finfo_image']; ?>" alt=""></a></li>
-           <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+           <li style="padding-bottom: 0px;"><?= html_entity_decode($row['finfo_address_one']); ?></li>
        </ul>
          <!-- member of   -->
         <?php 
@@ -263,7 +263,7 @@ getHeader();
           $row = mysqli_fetch_array($query); ?>
            <h2><?= $row['finfo_title']; ?></h2>
            <ul>
-               <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+               <li style="padding-bottom: 0px;"><?= html_entity_decode($row['finfo_address_one']); ?></li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->

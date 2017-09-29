@@ -43,7 +43,7 @@
             while($row = mysqli_fetch_array($query)): ?>
           <article>
             <h1><?= $row['post_title'] ?></h1>
-            <p><?= $row['post_details'] ?></p>
+            <p><?= html_entity_decode($row['post_details']); ?></p>
           </article>
         <?php endwhile; ?>
       </div>
@@ -75,7 +75,7 @@
                   </div>
                   <div class="text-desc">
                     <h3><?= $pslider['pslide_title']; ?></h3>
-                      <p><?= $pslider['pslide_details']; ?></p>
+                      <p><?= html_entity_decode($pslider['pslide_details']); ?></p>
                     <a href="#" class="btn"><?= $pslider['pslide_btn_text']; ?></a>
                   </div>
                 </div>
@@ -98,9 +98,9 @@
        <div class="footer-details">
            <h2><?= $row['finfo_title']; ?></h2>
            <ul>
-               <li><?= $row['finfo_address_one']; ?></li>
-               <li><?= $row['finfo_address_two']; ?></li>
-               <li><?= $row['finfo_address_three']; ?></li>
+               <li><?= html_entity_decode($row['finfo_address_one']); ?></li>
+               <li><?= html_entity_decode($row['finfo_address_two']); ?></li>
+               <li><?= html_entity_decode($row['finfo_address_three']); ?></li>
                 <li>
                 <?php 
                   $social = "SELECT * FROM social";
@@ -123,9 +123,9 @@
        <div class="footer-details">
            <h2><?= $crow['finfo_title']; ?></h2>
            <ul>
-               <li><?= $crow['finfo_address_one']; ?></li>
-               <li><?= $crow['finfo_address_two']; ?></li>
-               <li><?= $crow['finfo_address_three']; ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_one']); ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_two']); ?></li>
+               <li><?= html_entity_decode($crow['finfo_address_three']); ?></li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
@@ -142,7 +142,7 @@
        <h2><?= $row['finfo_title']; ?></h2>
        <ul>
            <li style="padding-bottom: 0px;"><a href=""><img class="img-responsive" src="admin/uploads/<?= $row['finfo_image']; ?>" alt=""></a></li>
-           <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+           <li style="padding-bottom: 0px;"><?= html_entity_decode($row['finfo_address_one']); ?></li>
        </ul>
          <!-- member of   -->
         <?php 
@@ -151,7 +151,7 @@
           $row = mysqli_fetch_array($query); ?>
            <h2><?= $row['finfo_title']; ?></h2>
            <ul>
-               <li style="padding-bottom: 0px;"><?= $row['finfo_address_one']; ?></li>
+               <li style="padding-bottom: 0px;"><?= html_entity_decode($row['finfo_address_one']); ?></li>
            </ul>
        </div>
    </div><!--col-sm-3 end-->
