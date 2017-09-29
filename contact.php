@@ -3,6 +3,7 @@
   getHeader(); 
   //for message insert
   $name = $email = $subject = $massage = ""; 
+  $name_error =  $email_error = $subject_error =  $message_error = "";
   if(!empty($_POST)){
     //name validation
     if(empty($_POST['name'])){
