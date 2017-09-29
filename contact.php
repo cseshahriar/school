@@ -24,7 +24,7 @@
     }
     //subject validation
     if(empty($_POST['subject'])){
-      $subject_error = "Name is required";
+      $subject_error = "Subject is required";
     }else{
       $subject =input_filter($_POST['subject']);
       if(!preg_match("/^[A-Za-z. ]*$/", $subject)){
@@ -33,7 +33,7 @@
     }
     //message validation
     if(empty($_POST['subject'])){
-      $message_error = "Name is required";
+      $message_error = "Massage is required";
     }else{
       $massage = input_filter($_POST['massage']);
       if(!preg_match("/^[A-Za-z. ]*$/", $massage)){
@@ -107,7 +107,7 @@
         <article>
           <h1>Contact Us</h1> 
           <p>For any questions or comments please write to us directly:  </p>
-          <?php if(isset($msg)){echo $msg;} ?><br><br>
+          <span id="massages" class="text-danger"><?php if(isset($msg)){echo $msg;} ?></span>
         </article>
           <div class="contact-us">
              <form action="" method="post" id="contact">
@@ -224,10 +224,20 @@
 <!-- /Social Nav-->
   <!-- Add your site or application content here -->
   <script src="js/vendor/jquery-1.12.0.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/contact-validation.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.enllax.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+   <script>
+        $(document).ready(function(){
+          $("#massages").show();
+          setTimeout(function() {
+           $("#massages").hide(); 
+          }, 5000);
+        });
+    </script>
 </body>
 </html>
