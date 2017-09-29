@@ -1,2 +1,2 @@
 # school
-Daunamic website development with procural php
+Dynamic website development with procedural php programming 
