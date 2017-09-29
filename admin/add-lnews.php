@@ -45,7 +45,7 @@
         <div class="panel-heading">
             <div class="col-md-9 heading_title">
                 Add Slider
-                <?php if(isset($msg)){echo $msg;} ?>
+               <span id="massages" class="text-danger"> <?php if(isset($msg)){echo $msg;} ?></span>
              </div>
              <div class="col-md-3 text-right">
                 <a href="all-user.php" class="btn btn-sm btn btn-primary"><i class="fa fa-th"></i> All User</a>

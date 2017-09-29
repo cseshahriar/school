@@ -34,7 +34,6 @@
       $data = htmlspecialchars($data);
       return $data;
     }
-
 ?>
 <style>
   .edit-photo{
@@ -53,7 +52,7 @@
         <div class="panel-heading">
             <div class="col-md-9 heading_title">
                 Edit Announcement
-                <?php if(isset($msg)){echo $msg; } ?>
+                <span id="massages" class="text-danger"><?php if(isset($msg)){echo $msg; } ?></span>
              </div>
              <div class="col-md-3 text-right">
                 <a href="all-user.php" class="btn btn-sm btn btn-primary" disabled><i class="fa fa-th"></i> Add Announcement</a>
