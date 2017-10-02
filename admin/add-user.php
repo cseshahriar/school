@@ -1,5 +1,4 @@
-<?php ob_start();
-require_once('functions/admin-functions.php');
+<?php require_once('functions/admin-functions.php');
     needLogIn();
     if($_SESSION['role'] <= 2) { 
     getAdminHeader();

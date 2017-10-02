@@ -1,10 +1,10 @@
-<?php session_start(); 
+<?php ob_start(); session_start(); 
 	require_once('config.php');
 	function getAdminHeader(){
 		require_once('includes/header.php');	
 	}
 	function getAdminSidebar(){
-		require_once('includes/sidebar.php');	
+		require_once('includes/sidebar.php');	 
 	}
 	function getBreadcrum(){
 		include_once('includes/breadcrum.php');	
