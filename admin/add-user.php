@@ -1,5 +1,5 @@
-<?php
-    require_once('functions/admin-functions.php');
+<?php ob_start();
+require_once('functions/admin-functions.php');
     needLogIn();
     if($_SESSION['role'] <= 2) { 
     getAdminHeader();
@@ -23,7 +23,7 @@
         if($insertQuery){
           move_uploaded_file($img['tmp_name'], 'uploads/'.$imgName);
           $msg = '<span id="message">Insertion Successfuly</span>';
-          header("Location: all-user.php"); //redirect
+          header("Location:all-user.php"); //redirect
         }else{
           $msg = '<span id="message">Insertion Failed!</span>';
         }
@@ -55,7 +55,7 @@
           <div class="form-group">
             <label for="" class="col-sm-3 control-label">Phone</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" name="phone">
+              <input type="text" class="form-control" name="phone" value="+880">
             </div>
           </div>
           <div class="form-group">
@@ -79,7 +79,7 @@
           <div class="form-group">
             <label for="" class="col-sm-3 control-label">Re-Password</label>
             <div class="col-sm-8">
-              <input type="password" class="form-control" name="repass"> 
+              <input type="password" class="form-control" name="repass" disabled> 
             </div>
           </div>
           <div class="form-group">

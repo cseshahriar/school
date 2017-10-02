@@ -1,5 +1,5 @@
-<?php session_start(); // for all admin page 
-	require_once('../config.php');
+<?php session_start(); 
+	require_once('config.php');
 	function getAdminHeader(){
 		require_once('includes/header.php');	
 	}
