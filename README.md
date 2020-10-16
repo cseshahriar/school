@@ -1,2 +1,2 @@
-# school
-Dynamic website development with procedural php programming 
+# Shosen School Management System
+An Open Source School Management System 
