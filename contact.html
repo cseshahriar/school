@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="author" content="Md. Shahriar Hosen, hosen.shahriar.cse@gmail.com">
+        <title>.:: Creative School ::.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" href="img/favicon.png" type="images/x-icon"/>
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--navbar-->
+  <section>
+    <nav class="navbar custom-nav">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img class="img-responsive" src="img/logo.png" alt="">
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="active-menu" href="index.html">Home</a></li>
+            <li><a  href="academics.html">ACADEMICS</a></li>
+            <li><a  href="admission.html">ADMISSION</a></li>
+            <li><a  href="curriculam.html">Curriculam</a></li>
+            <li><a  href="about.html">ABOUT US </a></li>
+            <li><a  href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!--navbar-->
+  </section>
+  
+<span id="massages" class="text-danger">Your massage has been sent successfully!</span>
+<span id="massages" class="text-danger">Massage sent faild!</span>
+    
+<span id="massages" class="text-danger">Invalid data!</span>
+<span id="massages" class="text-danger">All input field must not be empty!</span>
+
+<section class="academic-banner" style="background-image: url(admin/uploads/<?= $row['banner_image']; ?>);">
+  <div class="about-opacity">
+     <div class="container">
+         <h2>banner_title</h2>
+         <p>banner_subtitle</p>
+     </div> 
+  </div>
+</section>
+<!-- / banner -->
+
+<!--about us page-->        
+<section>
+  <div class="container">
+      <div class="col-sm-3">
+          <div class="widget-education">
+              <ul>
+                  <li><a href="#">about us</a></li>
+                  <li><a href="#">Ascent Group</a></li>
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Aims and Vision</a></li>
+                  <li><a href="#">Our Campuses</a></li>
+                  <li><a href="#">Educational Philosophy</a></li>
+                  <li><a href="#">Employment</a></li>
+                  <li><a href="#">Scholastica Alumni Association</a></li>
+                  <li><a href="#">News and Updates</a></li>
+              </ul>
+          </div>
+      </div>
+      <!-- contact page content -->
+      <div class="col-sm-9">
+        <article>
+          <h1>Contact Us</h1> 
+          <p>For any questions or comments please write to us directly:  </p>
+          <span id="massages" class="text-danger">msg</span>
+        </article>
+          <div class="contact-us">
+             <form action="" method="post" id="contact">
+                <div class="col-sm-6 pl0">
+                  <div class="form-group">
+                      <input type="text" id="name" name="name" placeholder="Full Name" />
+                      <span class="error">name_error</span>
+                  </div><!--form group-->
+                  <div class="form-group">
+                      <input type="email" id="email" name="email" placeholder="Email" />  
+                      <span class="error">email_error</span>        
+                  </div><!--form group-->
+                  <div class="form-group">
+                      <input type="text" id="subject" name="subject" placeholder="Subject" />
+                      <span class="error">subject_error</span> 
+                  </div><!--form group-->
+                </div>
+                <div class="col-sm-6 pr0">
+                     <textarea id="massage" name="massage"  rows="7" placeholder="Type Message"></textarea>
+                     <span class="error">message_error</span> 
+                    <!-- submit button -->
+                    <input type="submit" id="submit" name="sent" value="Sent Message">  
+                </div>
+             </form>
+          </div>
+      </div>
+      <!-- / contact page content -->
+  </div>
+</section>
+<!-- footer   -->
+<footer>
+ <div class="container">
+   <div class="col-sm-3">
+   
+       <div class="footer-details">
+           <h2>finfo_title</h2>
+           <ul>
+               <li>finfo_address_one</li>
+               <li>finfo_address_two</li>
+               <li>finfo_address_three</li>
+                <li>
+                  <b><a href="social_link"><i class="fa fa-social_fa_class"></i></a></b>
+                </li>
+           </ul>
+       </div>
+   </div><!--col-sm-3 end-->
+   <!-- campus address  -->
+ 
+   <div class="col-sm-3">
+       <div class="footer-details">
+           <h2>finfo_title</h2>
+           <ul>
+               <li>finfo_address_one</li>
+               <li>finfo_address_two</li>
+               <li>finfo_address_three</li>
+           </ul>
+       </div>
+   </div><!--col-sm-3 end-->
+
+<!-- /campus address  -->
+   <div class="col-sm-3">
+       <div class="footer-details">
+       <!-- associated -->
+       <h2>finfo_title</h2>
+       <ul>
+           <li style="padding-bottom: 0px;"><a href=""><img class="img-responsive" src="admin/uploads/finfo_image" alt=""></a></li>
+           <li style="padding-bottom: 0px;">finfo_address_one</li>
+       </ul>
+         <!-- member of   -->
+   
+           <h2>finfo_title</h2>
+           <ul>
+               <li style="padding-bottom: 0px;">finfo_address_one</li>
+           </ul>
+       </div>
+   </div><!--col-sm-3 end-->
+ </div>  
+ <div class="back_to_top"><img src="img/target.png" alt="target"></div>
+</footer> 
+<!-- /footer -->
+
+<!-- Social Nav -->
+<ul class="social-nav model-0">
+  <li><a href="social_link" class="twitter"><i class="fa fa-social_fa_class"></i></a>
+  </li>
+</ul>   
+<!-- /Social Nav-->
+
+  <!-- Add your site or application content here -->
+  <script src="js/vendor/jquery-1.12.0.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/contact-validation.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.enllax.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+   <script>
+        $(document).ready(function(){
+          $("#massages").show();
+          setTimeout(function() {
+           $("#massages").hide(); 
+          }, 5000);
+        });
+    </script>
+</body>
+</html>

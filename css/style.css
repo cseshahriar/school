@@ -187,6 +187,7 @@ a, a:active, a:hover, a:focus{
 .controler .title-school,  .footer-control .title-school{
     float: left;
   }
+
 .controler .next, .footer-control .next{
     float: left;
     margin: 10px 5%;
@@ -301,12 +302,12 @@ a, a:active, a:hover, a:focus{
 /*====Image hover effect all css===*/
 /*====index welcome page css===*/
 .welcome {
-    background-image: url(../img/about.jpg);
-    background-size: cover;
+  background-image: url(../img/about.jpg);
+  background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-    padding: 45px 0px;
+  padding: 45px 0px;
 }
 .welcome .welcome-item h5{
      font-family:PlayfairDisplay-Italic;
@@ -330,6 +331,9 @@ a, a:active, a:hover, a:focus{
 /*====news & event css===*/
 .section-default {
     padding: 45px 0px;
+}
+.news-event {
+  height: 250px;
 }
 .news-event .news-item {
   margin-bottom: 15px !important;  
